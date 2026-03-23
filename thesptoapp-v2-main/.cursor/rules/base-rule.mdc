@@ -1,0 +1,199 @@
+---
+alwaysApply: true
+---
+
+---
+alwaysApply: true
+---
+---
+alwaysApply: true
+---
+
+You are an expert in TypeScript, React Native, Expo, Expo Router, Firebase, and Mobile UI development.
+
+Code Style and Structure
+- Write concise, technical TypeScript code with accurate examples.
+- Use functional and declarative programming patterns; avoid classes.
+- Prefer iteration and modularization over code duplication.
+- Use descriptive variable names with auxiliary verbs (e.g., isLoading, hasError).
+- Structure files: exported component, subcomponents, helpers, static content, types.
+- Follow Expo's official documentation for setting up and configuring your projects: https://docs.expo.dev/
+
+Naming Conventions
+- Use lowercase with dashes for directories (e.g., components/auth-wizard).
+- Favor named exports for components.
+- Use PascalCase for component files and camelCase for utility files.
+
+TypeScript Usage
+- Use TypeScript for all code; prefer interfaces over types.
+- Avoid enums; use const assertions and union types instead.
+- Use functional components with TypeScript interfaces.
+- Use strict mode in TypeScript for better type safety.
+- Define proper types for Firebase data structures and API responses.
+
+Syntax and Formatting
+- Use the "function" keyword for pure functions.
+- Avoid unnecessary curly braces in conditionals; use concise syntax for simple statements.
+- Use declarative JSX.
+- Use Prettier for consistent code formatting.
+
+Navigation with Expo Router
+- Use Expo Router (file-based routing) as the primary navigation solution.
+- Leverage the app directory structure for automatic route generation.
+- Use dynamic routes with [id] syntax for parameterized routes.
+- Implement proper TypeScript types for route parameters using `useLocalSearchParams<T>()`.
+- Use `router.push()`, `router.replace()`, and `router.back()` for navigation.
+- Implement nested layouts using `_layout.tsx` files.
+- Use `(tabs)` and `(stack)` directory naming for specific navigation patterns.
+- Leverage `href` prop for Link components with proper TypeScript inference.
+
+Firebase Integration
+- Use Firebase v9+ modular SDK for optimal bundle size.
+- Implement Firebase Auth with proper error handling and type safety.
+- Use Firebase Firestore for real-time database operations.
+- Implement proper security rules for Firestore collections.
+- Use Firebase Storage for file uploads with progress tracking.
+- Leverage Firebase Cloud Functions for server-side logic when needed.
+- Implement proper offline support using Firestore's offline persistence.
+- Use Firebase Analytics for tracking user behavior and app performance.
+- Handle Firebase Auth state changes properly with useEffect and cleanup.
+
+App Initialization and Onboarding
+- Use Expo SplashScreen API to control splash screen visibility during app initialization.
+- Implement proper app state checking during splash screen:
+  - Check if user has completed onboarding using AsyncStorage or SecureStore
+  - Check Firebase Auth state for existing authenticated users
+  - Navigate appropriately based on combined state (onboarded + authenticated)
+- Create smooth transitions from splash screen to appropriate screens.
+- Implement onboarding flow with swipeable screens using react-native-pager-view or similar.
+- Store onboarding completion state persistently to avoid showing it again.
+- Handle onboarding skip functionality and proper navigation flow.
+
+Authentication Patterns
+- Create custom hooks for Firebase Auth state management (e.g., `useAuth`, `useUser`).
+- Implement protected routes using Expo Router's middleware or layout components.
+- Use Firebase Auth providers (Google, Apple, Email/Password) with proper error handling.
+- Implement proper sign-out functionality with navigation cleanup.
+- Handle authentication persistence across app restarts.
+- Create proper loading states during auth state resolution.
+
+UI and Styling
+- Use Expo's built-in components for common UI patterns and layouts.
+- Implement responsive design with Flexbox and useWindowDimensions for screen size adjustments.
+- Use NativeWind (Tailwind CSS for React Native) or styled-components for component styling.
+- Implement dark mode support using useColorScheme and system preferences.
+- Ensure high accessibility (a11y) standards using ARIA roles and native accessibility props.
+- Leverage react-native-reanimated 3 and react-native-gesture-handler for performant animations and gestures.
+- Use react-native-pager-view or similar for swipeable onboarding screens with smooth transitions.
+- Implement proper loading states and skeleton screens for better UX.
+- Create reusable onboarding components with progress indicators and navigation controls.
+
+Safe Area Management
+- Use SafeAreaProvider from react-native-safe-area-context to manage safe areas globally.
+- Wrap top-level layouts with SafeAreaView to handle notches, status bars, and screen insets.
+- Use useSafeAreaInsets hook for custom safe area implementations.
+- Avoid hardcoding padding or margins for safe areas; rely on SafeAreaView and context hooks.
+
+Performance Optimization
+- Minimize useState and useEffect usage; prefer context and reducers for complex state.
+- Use Expo's SplashScreen API for optimized app startup experience.
+- Optimize images: use Expo Image component with WebP format, include size data, implement lazy loading.
+- Implement code splitting and lazy loading for non-critical components with React's Suspense.
+- Profile and monitor performance using Flipper and React Native's built-in tools.
+- Avoid unnecessary re-renders by memoizing components and using useMemo and useCallback appropriately.
+- Use React Query/TanStack Query for efficient data fetching and caching.
+
+State Management
+- Use React Context and useReducer for managing global state.
+- Leverage TanStack Query (React Query) for server state management and caching.
+- For complex client state, consider using Zustand or Redux Toolkit.
+- Implement proper Firebase real-time listeners with cleanup in useEffect.
+- Handle URL search parameters using useLocalSearchParams from Expo Router.
+- Use AsyncStorage for persisting onboarding state and user preferences.
+- Implement proper app state management for splash screen, onboarding, and auth flows.
+
+Error Handling and Validation
+- Use Zod for runtime validation and error handling.
+- Implement proper error logging using Sentry or Firebase Crashlytics.
+- Prioritize error handling and edge cases:
+  - Handle errors at the beginning of functions.
+  - Use early returns for error conditions to avoid deeply nested if statements.
+  - Avoid unnecessary else statements; use if-return pattern instead.
+  - Implement global error boundaries to catch and handle unexpected errors.
+- Handle Firebase-specific errors (auth/network/firestore) with user-friendly messages.
+
+Security
+- Sanitize user inputs to prevent XSS attacks.
+- Use Expo SecureStore for secure storage of sensitive data.
+- Implement proper Firebase Security Rules for Firestore and Storage.
+- Use HTTPS for all API communications.
+- Validate user permissions before sensitive operations.
+- Follow Expo's Security guidelines: https://docs.expo.dev/guides/security/
+
+Internationalization (i18n)
+- Use expo-localization for internationalization and localization.
+- Support multiple languages and RTL layouts.
+- Ensure text scaling and font adjustments for accessibility.
+- Use react-i18next for translation management.
+
+Key Conventions
+1. Rely on Expo's managed workflow and EAS Build for streamlined development and deployment.
+2. Prioritize Mobile Web Vitals (Load Time, Jank, and Responsiveness).
+3. Use expo-constants for managing environment variables and configuration.
+4. Use expo-permissions to handle device permissions gracefully.
+5. Implement EAS Updates for over-the-air (OTA) updates.
+6. Follow Expo's best practices for app deployment and publishing: https://docs.expo.dev/distribution/introduction/
+7. Ensure compatibility with iOS and Android by testing extensively on both platforms.
+8. Use Expo Development Build for testing native modules and custom native code.
+
+File Structure Best Practices
+```
+app/
+├── (auth)/
+│   ├── _layout.tsx
+│   ├── sign-in.tsx
+│   └── sign-up.tsx
+├── (tabs)/
+│   ├── _layout.tsx
+│   ├── index.tsx
+│   └── profile.tsx
+├── onboarding/
+│   ├── _layout.tsx
+│   ├── step-1.tsx
+│   ├── step-2.tsx
+│   └── step-3.tsx
+├── _layout.tsx
+└── +not-found.tsx
+components/
+├── ui/
+│   ├── Button.tsx
+│   ├── Input.tsx
+│   └── OnboardingPager.tsx
+├── auth/
+│   └── AuthProvider.tsx
+└── onboarding/
+    └── OnboardingStep.tsx
+lib/
+├── firebase.ts
+├── auth.ts
+├── storage.ts
+└── utils.ts
+hooks/
+├── useAuth.ts
+├── useFirestore.ts
+├── useOnboarding.ts
+└── useAppState.ts
+```
+
+Firebase Configuration
+- Initialize Firebase in a dedicated configuration file.
+- Use environment variables for Firebase configuration keys.
+- Implement proper Firebase emulator setup for development.
+- Use Firebase Admin SDK for server-side operations when needed.
+
+API Documentation
+- Use Expo's official documentation: https://docs.expo.dev/
+- Reference Firebase documentation: https://firebase.google.com/docs
+- Follow Expo Router documentation: https://docs.expo.dev/router/introduction/
+
+Refer to Expo's documentation and Firebase guides for detailed information on Views, Components, and Extensions for best practices.

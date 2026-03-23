@@ -1,0 +1,232 @@
+{
+    "id": "menstrual-health-guide",
+    "title": "Menstrual Health: Understanding, Care, and Awareness",
+    "summary": "A complete guide to understanding menstrual health, including the menstrual cycle, period care, product options, period poverty, and ways to break stigma and improve access in Zambia.",
+    "category": "menstrual-health",
+    "tags": ["menstrual-health", "periods", "women-health", "period-poverty", "education", "Zambia"],
+    "featuredImage": "https://storage.googleapis.com/thespot-app/images/menstrual-health.jpg",
+    "estimatedReadTime": 25,
+    "lastUpdated": "2025-11-10T00:00:00Z",
+    "publishedDate": "2025-11-10T00:00:00Z",
+    "author": "The Spot Health Team",
+    "sources": [
+      "https://www.who.int/health-topics/menstrual-health",
+      "https://www.unicef.org/zambia/reports/zambias-menstrual-health-and-hygiene-management-strategy",
+      "https://www.girlsnotbrides.org/articles/menstrual-health-and-child-marriage/",
+      "https://menstrualhygieneday.org/",
+      "https://www.washdata.org/monitoring/mhh",
+      "https://zambia.unfpa.org/en/news/ending-period-poverty-zambia-%E2%80%93-ensuring-no-girl-left-behind",
+      "https://bmcwomenshealth.biomedcentral.com/articles/10.1186/s12905-022-01802-6",
+      "https://www.care.org/news-and-stories/news/period-poverty-in-zambia-how-menstrual-cups-help-girls-stay-in-school/",
+      "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10702017/",
+      "https://www.plan-international.org/sexual-health/period-poverty/",
+      "https://www.unfpa.org/menstrual-health",
+      "https://www.undp.org/zambia/news/empowering-women-and-girls-through-menstrual-hygiene"
+    ],
+    "isPublished": true,
+    "difficulty": "beginner",
+    "targetAudience": ["adolescents", "young-women", "educators"],
+    "sections": [
+      {
+        "id": "about-menstrual-health",
+        "title": "Understanding Menstrual Health 💜",
+        "order": 1,
+        "content": "Menstrual health isn’t just about getting your period. It’s about taking care of your whole body, mind, and social life. It means knowing what’s happening in your body, having access to products that help you manage your period, and being able to do so with comfort and dignity. Periods are natural and normal, so let’s talk about them openly!",
+        "subsections": [
+          {
+            "id": "importance-of-education",
+            "title": "Why Menstrual Education Matters 📚",
+            "order": 1,
+            "content": "Learning about periods helps you understand your body and feel ready for the changes during puberty. Many people grow up hearing myths or feeling ashamed of their periods. But when we know the facts, we can feel more confident and take care of our health.",
+            "list": [
+              "Confidence Boost: Knowing how your cycle works helps you feel more in control.",
+              "Goodbye, Myths: Learning real facts replaces shame with understanding.",
+              "Better Hygiene: Knowing how to stay clean and healthy helps prevent infections.",
+              "Understanding Your Body: Cramps, mood swings, and other changes can be managed better when you know what’s going on.",
+              "Less Stigma: Talking about periods makes it easier to ask for help and support."
+            ]
+          }
+        ]
+      },
+      {
+        "id": "period-poverty",
+        "title": "What is Period Poverty? 😔",
+        "order": 2,
+        "content": "Period poverty happens when people don’t have access to period products, clean toilets, or proper info. It mostly affects those in low-income areas and has a big impact on school, health, and confidence.",
+        "subsections": [
+          {
+            "id": "effects-of-period-poverty",
+            "title": "How It Affects People",
+            "order": 1,
+            "list": [
+              "Missing School: No pads = missed classes. Some even drop out.",
+              "Health Risks: Using unsafe materials like rags or paper can cause infections.",
+              "Emotional Impact: Embarrassment and fear of leaks can make people avoid activities.",
+              "Money Struggles: Period products can be expensive and out of reach for many families."
+            ]
+          },
+          {
+            "id": "solutions-to-period-poverty",
+            "title": "What Can Help",
+            "order": 2,
+            "list": [
+              "More education in schools",
+              "Free or affordable pads and products",
+              "Open conversations about periods",
+              "Laws and policies that treat menstrual health as a basic right"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "menstrual-science",
+        "title": "The Science Behind Menstruation 🔬",
+        "order": 3,
+        "content": "Your body prepares for pregnancy each month. If there’s no pregnancy, your body releases the extra lining from your uterus as a period.",
+        "subsections": [
+          {
+            "id": "cycle-phases",
+            "title": "The Menstrual Cycle (21–35 Days)",
+            "order": 1,
+            "list": [
+              "Days 1–5: Period Time – The uterus sheds its lining.",
+              "Days 6–14: Follicular Phase – Estrogen rises as your body prepares for ovulation.",
+              "Day 14: Ovulation – The ovary releases an egg.",
+              "Days 15–28: Luteal Phase – Progesterone thickens the uterus lining; if no pregnancy, hormones drop, and your period starts again."
+            ]
+          },
+          {
+            "id": "hormones",
+            "title": "Hormones That Run the Show",
+            "order": 2,
+            "list": [
+              "Estrogen: Thickens the uterus lining.",
+              "Progesterone: Keeps the lining stable.",
+              "FSH: Matures the egg.",
+              "LH: Triggers egg release."
+            ]
+          },
+          {
+            "id": "symptoms",
+            "title": "Period Symptoms",
+            "order": 3,
+            "list": ["Cramps", "Bloating", "Mood swings", "Acne", "Fatigue"]
+          }
+        ]
+      },
+      {
+        "id": "period-products",
+        "title": "Period Products: What Are Your Options? 🩸",
+        "order": 4,
+        "content": "Everyone is different, and so are their period needs. Try different products to find what works best for you.",
+        "subsections": [
+          {
+            "id": "product-types",
+            "title": "Types of Period Products",
+            "order": 1,
+            "list": [
+              "Sanitary Pads: Easy to use, available in different sizes, change every 4–6 hours.",
+              "Tampons: Inserted inside the vagina, ideal for swimming, change every 4–8 hours.",
+              "Menstrual Cups: Reusable, eco-friendly, can stay up to 12 hours.",
+              "Reusable Cloth Pads: Washable and eco-friendly, must be cleaned properly.",
+              "Period Underwear: Absorbent underwear that can be washed and reused.",
+              "Menstrual Diapers: Suitable for heavy flow or overnight use, change every 4–6 hours."
+            ]
+          },
+          {
+            "id": "period-care-essentials",
+            "title": "Period Care Essentials 🧴🍫🧘‍♀️",
+            "order": 2,
+            "list": [
+              "Menstrual Products: Pads, tampons, cups, period underwear",
+              "Pain Relief: Heat pads, teas, painkillers",
+              "Hydration: Water, herbal drinks",
+              "Comfort: Blankets, cozy clothes, aromatherapy",
+              "Nutrition: Dark chocolate, nuts, vitamins",
+              "Mental Health: Journaling, breathing exercises, support apps",
+              "Education: Period tracker apps, info booklets",
+              "Holistic Options: Herbal teas, healing stones"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "common-health-issues",
+        "title": "Common Period-Related Health Issues 🚨",
+        "order": 5,
+        "subsections": [
+          {
+            "id": "health-conditions",
+            "title": "Common Conditions",
+            "order": 1,
+            "list": [
+              "PCOS: Irregular periods, acne, weight gain, managed with lifestyle or medication.",
+              "Endometriosis: Painful periods and heavy flow, treated with hormones or surgery.",
+              "Irregular Periods: Often caused by stress or hormonal imbalance.",
+              "Painful Cramps (Dysmenorrhea): Managed with heat or medication.",
+              "Heavy Bleeding (Menorrhagia): Can cause fatigue; treated with medicine or iron supplements.",
+              "PMS and PMDD: Emotional and physical symptoms before periods, managed with diet or therapy.",
+              "Amenorrhea: Missing periods due to stress, weight, or conditions like PCOS.",
+              "Hypomenorrhea: Light periods caused by birth control or stress.",
+              "Fibroids: Non-cancerous growths causing pain and heavy bleeding.",
+              "PID: Infection from STIs causing pain and fertility problems.",
+              "Metrorrhagia: Bleeding between periods caused by hormonal issues."
+            ]
+          }
+        ]
+      },
+      {
+        "id": "stigma-and-taboos",
+        "title": "Menstrual Stigma and Cultural Taboos 🙅🏾‍♀️",
+        "order": 6,
+        "content": "In many cultures, periods are seen as shameful. This leads to isolation, missed school, and poor hygiene.",
+        "subsections": [
+          {
+            "id": "stigma-examples",
+            "title": "Examples",
+            "order": 1,
+            "list": [
+              "Girls missing school due to lack of pads or toilets.",
+              "Restrictions on cooking or attending events during menstruation.",
+              "Fear and shyness to buy products or ask for help."
+            ]
+          },
+          {
+            "id": "how-to-break-stigma",
+            "title": "What We Can Do",
+            "order": 2,
+            "list": [
+              "Talk about periods openly.",
+              "Provide period products for free or low cost.",
+              "Build safe, private toilets.",
+              "Include people with disabilities in menstrual health planning."
+            ]
+          }
+        ]
+      },
+      {
+        "id": "breaking-barriers",
+        "title": "Breaking Barriers: Making Menstrual Products Accessible 💪🏾",
+        "order": 7,
+        "subsections": [
+          {
+            "id": "access-barriers",
+            "title": "Challenges",
+            "order": 1,
+            "list": [
+              "Cost: Period products are expensive for many families.",
+              "Availability: Rural areas often lack stores or transport for supplies.",
+              "Cultural Opposition: Myths and stigma discourage product use."
+            ]
+          },
+          {
+            "id": "call-to-action",
+            "title": "Let’s Change This Together 💜",
+            "order": 2,
+            "content": "Menstrual health is a human right. We need education, support, access to products, and open conversations so everyone can manage their period with comfort, confidence, and dignity."
+          }
+        ]
+      }
+    ]
+  }
+  

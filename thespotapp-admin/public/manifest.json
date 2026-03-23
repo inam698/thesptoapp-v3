@@ -1,0 +1,26 @@
+{
+  "name": "The Spot App Admin",
+  "short_name": "Spot Admin",
+  "description": "Admin dashboard for The Spot App",
+  "start_url": "/dashboard",
+  "display": "standalone",
+  "background_color": "#FDFDC9",
+  "theme_color": "#9B6DAE",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/icon.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["productivity", "utilities"],
+  "screenshots": []
+}

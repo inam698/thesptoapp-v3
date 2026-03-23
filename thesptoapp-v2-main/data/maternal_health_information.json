@@ -1,0 +1,131 @@
+{
+  "id": "maternal_health_information",
+  "title": "Maternal Health Information",
+  "category": "maternal-health",
+  "sections": [
+    {
+      "title": "What is Maternal Health?",
+      "content": "Maternal health is all about the health and wellness of people with female bodies during pregnancy, childbirth, and the time right after giving birth (the postpartum period). It\u2019s super important because when someone carrying a baby is healthy, it makes things safer for both them and the baby. Pregnancy brings a lot of changes to the body, some expected and some risky, like high blood pressure, infections, or bleeding. Without proper care, these can become serious or even life-threatening. Skilled healthcare workers and post-birth care are vital to prevent complications like infections, blood clots, or postpartum depression. According to WHO, about 295,000 people die yearly from pregnancy-related issues, mostly in places with limited healthcare access\u2014most of which are preventable. Maternal health depends on access to care, education, financial stability, and community support. Improving it requires better healthcare access, skilled professionals, education, and emotional and social support."
+    },
+    {
+      "title": "Maternal Health in Zambia",
+      "content": "Zambia has made progress in maternal healthcare with free services and more trained attendants. Antenatal care is now common, but rural areas still face challenges\u2014distance, transport, and under-resourced clinics cause delays. Safe Motherhood Action Groups (SMAGs) help educate communities about antenatal care, skilled birth, and postnatal support. Continued investment and awareness can further reduce maternal deaths and make childbirth safer."
+    },
+    {
+      "title": "Preconception & Family Planning",
+      "subsections": [
+        {
+          "title": "What is Preconception Care?",
+          "content": "Preconception care is the healthcare received before pregnancy to prepare body and mind for a healthy pregnancy. It includes eating well (especially folic acid), avoiding harmful substances, and managing existing health conditions like diabetes or hypertension. Preparing early helps reduce complications during pregnancy."
+        },
+        {
+          "title": "Family Planning & Contraception",
+          "content": "Family planning helps people decide if, when, and how to have children. There are many contraception options to choose from, and it's important to find one that fits your needs and lifestyle."
+        }
+      ]
+    },
+    {
+      "title": "Pregnancy: Stages & Care",
+      "subsections": [
+        {
+          "title": "First Trimester (0\u201312 Weeks)",
+          "content": "This early stage involves major changes in the body and baby. Signs include missed periods, nausea, fatigue, and mood swings. By week 6, the baby\u2019s heart beats; by week 8, major organs begin forming. Important care includes starting prenatal visits, taking folic acid, and getting the first ultrasound."
+        },
+        {
+          "title": "Second Trimester (13\u201326 Weeks)",
+          "content": "Nausea often fades, and energy improves. The baby\u2019s movements begin between weeks 18\u201322. Routine tests check for gestational diabetes and anemia. Continue prenatal vitamins and maintain emotional support."
+        },
+        {
+          "title": "Third Trimester (27\u201340 Weeks)",
+          "content": "The baby grows rapidly and prepares for birth. Expect discomforts like swelling, back pain, or sleep issues. Watch for signs of labor such as contractions or water breaking. Prepare for birth with check-ups and a hospital bag."
+        }
+      ]
+    },
+    {
+      "title": "Labour & Delivery",
+      "subsections": [
+        {
+          "title": "Stage 1: Early & Active Labour",
+          "content": "Labour begins with contractions that open the cervix. Early labour features mild contractions; active labour involves stronger, closer contractions as the cervix dilates to 7cm. Healthcare teams monitor contractions and the baby\u2019s heartbeat."
+        },
+        {
+          "title": "Stage 2: Pushing & Birth",
+          "content": "Once the cervix reaches 10cm, pushing begins. It may last minutes or hours. The baby\u2019s head emerges first, followed by the body. After birth, skin-to-skin contact supports bonding and warmth."
+        },
+        {
+          "title": "Stage 3: Delivering the Placenta",
+          "content": "The placenta is delivered about 30 minutes after birth. The provider ensures it\u2019s fully removed to avoid complications and monitors bleeding and uterine contraction."
+        },
+        {
+          "title": "Pain Management During Labour",
+          "content": "Pain relief options include natural methods (breathing, movement, warm water) and medical ones (epidural, opioids, spinal block). C-sections may be necessary for complications like breech position or stalled labour."
+        }
+      ]
+    },
+    {
+      "title": "Postpartum Care & Recovery",
+      "subsections": [
+        {
+          "title": "Physical Recovery",
+          "content": "After vaginal birth, soreness and cramping are normal; use ice packs and rest. After C-section, care for the incision and avoid heavy lifting. Recovery may take 6\u20138 weeks."
+        },
+        {
+          "title": "Mental Health",
+          "content": "Mood swings are common after birth (baby blues). Postpartum depression is more serious and needs medical attention. Symptoms include sadness, numbness, and trouble bonding with the baby."
+        },
+        {
+          "title": "Breastfeeding",
+          "content": "Breast milk offers ideal nutrition and immunity. Challenges include sore nipples or low supply. Lactation consultants or support groups can help."
+        },
+        {
+          "title": "Birth Control",
+          "content": "Pregnancy can occur soon after birth. Safe options during breastfeeding include IUDs, implants, and certain pills. Consult a healthcare provider to choose the right method."
+        }
+      ]
+    },
+    {
+      "title": "Newborn & Infant Care",
+      "subsections": [
+        {
+          "title": "Newborn Screenings",
+          "content": "Newborns are tested within 24\u201348 hours for genetic and metabolic conditions. Early detection allows timely treatment."
+        },
+        {
+          "title": "Vaccinations",
+          "content": "Vaccines protect against diseases like hepatitis B, DTP, and polio. Early immunization builds strong immunity."
+        },
+        {
+          "title": "Feeding & Nutrition",
+          "content": "Babies feed every 2\u20133 hours. Breastfeeding or formula are both healthy options. Watch for hunger cues like hand sucking or rooting."
+        },
+        {
+          "title": "Sleep & Safety",
+          "content": "To reduce SIDS risk, always place the baby on their back, use a firm mattress, and keep the crib free from pillows or toys."
+        }
+      ]
+    },
+    {
+      "title": "High-Risk Pregnancy & Complications",
+      "content": "Some pregnancies are high-risk due to conditions like gestational diabetes, preeclampsia, or preterm labour. These require closer monitoring and specialized care to ensure the safety of both parent and baby."
+    },
+    {
+      "title": "Maternal Health Myths & Facts",
+      "content": "Myth: You can\u2019t exercise while pregnant. Fact: Moderate exercise is safe and recommended.\nMyth: Eating for two means double portions. Fact: Only 300\u2013500 extra calories are needed.\nMyth: Heartburn means a hairy baby. Fact: It\u2019s caused by hormones, not hair.\nMyth: All pregnant people crave food. Fact: Everyone\u2019s experience is different."
+    },
+    {
+      "title": "Resources",
+      "links": [
+        "https://www.who.int/health-topics/maternal-health",
+        "https://www.cdc.gov/pregnancy/index.html",
+        "https://www.unicef.org/health/maternal-and-newborn-health",
+        "https://www.guttmacher.org/topics/reproductive-health",
+        "https://www.marchofdimes.org/find-support/topics/pregnancy",
+        "https://www.nice.org.uk/guidance",
+        "https://zambia.unfpa.org/en/topics/towards-ending-preventable-maternal-deaths",
+        "https://www.unicef.org/zambia/press-releases/government-and-unicef-commend-progress-reducing-maternal-mortality",
+        "https://www.healthynewbornnetwork.org/blog/maternal-mortality-in-zambia-a-call-for-renewed-commitment/",
+        "https://www.dai.com/our-work/projects/zambia-mobilising-access-to-maternal-health-services-mamaz"
+      ]
+    }
+  ]
+}

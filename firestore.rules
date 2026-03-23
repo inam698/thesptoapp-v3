@@ -1,0 +1,118 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // Helper: check if the requesting user has admin role
+    function isAdmin() {
+      return request.auth != null
+        && exists(/databases/$(database)/documents/users/$(request.auth.uid))
+        && get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role == "admin";
+    }
+
+    // Helper: user is authenticated
+    function isSignedIn() {
+      return request.auth != null;
+    }
+
+    // Articles — public read, admin-only write
+    // Allow authenticated users to increment viewCount only
+    match /articles/{articleId} {
+      allow read: if true;
+      allow create, delete: if isAdmin();
+      allow update: if isAdmin()
+        || (isSignedIn()
+            && request.resource.data.diff(resource.data).affectedKeys().hasOnly(["viewCount"])
+            && request.resource.data.viewCount == resource.data.viewCount + 1);
+    }
+
+    // Health Tips — public read, admin-only write
+    match /health_tips/{tipId} {
+      allow read: if true;
+      allow create, update, delete: if isAdmin();
+    }
+
+    // Announcements — public read, admin-only write
+    match /announcements/{docId} {
+      allow read: if true;
+      allow create, update, delete: if isAdmin();
+    }
+
+    // Users —
+    //   • Each user can create/read/update their own document
+    //   • Users cannot change their own role (prevent privilege escalation)
+    //   • Admins can read all user documents
+    match /users/{userId} {
+      allow read: if isSignedIn() && (request.auth.uid == userId || isAdmin());
+
+      // Mobile app creates user doc on sign-up (role must be "user")
+      allow create: if isSignedIn()
+        && request.auth.uid == userId
+        && request.resource.data.role == "user";
+
+      // User can update their own doc but NOT change their role
+      allow update: if isSignedIn()
+        && request.auth.uid == userId
+        && (!request.resource.data.diff(resource.data).affectedKeys().hasAny(["role"]));
+
+      // Only admins can delete user documents
+      allow delete: if isAdmin();
+
+      // Bookmarks subcollection — owner read/write only
+      match /bookmarks/{bookmarkId} {
+        allow read, write: if isSignedIn() && request.auth.uid == userId;
+      }
+
+      // Reading history subcollection — owner read/write only
+      match /reading_history/{historyId} {
+        allow read, write: if isSignedIn() && request.auth.uid == userId;
+      }
+
+      // Journal subcollection — owner read/write only
+      match /journal/{entryId} {
+        allow read, write: if isSignedIn() && request.auth.uid == userId;
+      }
+
+      // Period tracker cycles — owner read/write only
+      match /cycles/{cycleId} {
+        allow read, write: if isSignedIn() && request.auth.uid == userId;
+      }
+
+      // Period tracker daily logs — owner read/write only
+      match /logs/{logId} {
+        allow read, write: if isSignedIn() && request.auth.uid == userId;
+      }
+    }
+
+    // Article views — authenticated users can create, admins can read
+    match /article_views/{viewId} {
+      allow create: if isSignedIn();
+      allow read: if isAdmin();
+    }
+
+    // Media library — admin only
+    match /media/{mediaId} {
+      allow read, write: if isAdmin();
+    }
+
+    // Activity log — admin only
+    match /activity_log/{logId} {
+      allow read, write: if isAdmin();
+    }
+
+    // Admin drafts — admin only
+    match /drafts/{draftId} {
+      allow read, write: if isAdmin();
+    }
+
+    // App config — public read (mobile app checks version), admin write
+    match /app_config/{configId} {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+
+    // Deployment logs — admin only
+    match /deployment_logs/{logId} {
+      allow read, write: if isAdmin();
+    }
+  }
+}

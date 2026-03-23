@@ -1,0 +1,22 @@
+{
+  "expo": {
+    "name": "The spot app",
+    "slug": "thesptoapp-v2-main",
+    "owner": "spot-app23",
+    "extra": {
+      "eas": {
+        "projectId": "b0e79767-dd44-42f7-80d7-13a64028ed08"
+      }
+    },
+    "ios": {
+      "buildNumber": "16",
+      "bundleIdentifier": "com.chombazm.thespotapp",
+      "infoPlist": {
+        "ITSAppUsesNonExemptEncryption": false
+      }
+    },
+    "android": {
+      "package": "com.spotapp23.thesptoappv2main"
+    }
+  }
+}

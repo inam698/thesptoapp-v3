@@ -1,0 +1,211 @@
+{
+  "id": "srhr-laws-guide",
+  "title": "Sexual and Reproductive Health and Rights (SRHR) Laws in Africa",
+  "summary": "An overview of Sexual and Reproductive Health and Rights (SRHR) laws across Africa, highlighting key legal frameworks, protections, and challenges faced in promoting sexual and reproductive health and rights for all.",
+  "category": "srhr-laws",
+  "tags": [
+    "SRHR",
+    "laws",
+    "sexual-health",
+    "reproductive-rights",
+    "Africa",
+    "Zambia",
+    "policy",
+    "gender-equality"
+  ],
+  "featuredImage": "https://storage.googleapis.com/thespot-app/images/srhr-laws.jpg",
+  "estimatedReadTime": 30,
+  "lastUpdated": "2024-01-15T00:00:00Z",
+  "publishedDate": "2024-01-10T00:00:00Z",
+  "author": "The Spot Health Team",
+  "sources": [
+    "Zambia \u2013 Termination of Pregnancy Act (1972)",
+    "Zambia \u2013 Gender Equity and Equality Act (2015)",
+    "Zambia \u2013 Children\u2019s Code Act (2022)",
+    "Zambia \u2013 Marriage Act",
+    "South Africa \u2013 Choice on Termination of Pregnancy Act (1996)",
+    "Zimbabwe \u2013 Termination of Pregnancy Act (1977)",
+    "Namibia \u2013 Abortion and Sterilisation Act (1975)",
+    "Kenya \u2013 Sexual Offences Act (2006)",
+    "Kenya \u2013 Constitution (2010), Article 26(4)",
+    "Tanzania \u2013 Penal Code (Cap 16)",
+    "Uganda \u2013 Laws on Abortion",
+    "Nigeria \u2013 Criminal Code (1990)",
+    "Ghana \u2013 Criminal Offences Act (1960)",
+    "Maputo Protocol (2003)",
+    "ICPD Programme of Action (1994)",
+    "Abuja Declaration (2001)",
+    "SADC Protocol on Gender and Development (2008)"
+  ],
+  "isPublished": true,
+  "difficulty": "intermediate",
+  "targetAudience": [
+    "youth",
+    "health-educators",
+    "policy-makers"
+  ],
+  "sections": [
+    {
+      "id": "what-are-srhr-laws",
+      "title": "What Are SRHR Laws?",
+      "order": 1,
+      "content": "Sexual and Reproductive Health and Rights (SRHR) laws are government-made rules protecting people's rights to make decisions about their bodies, sex life, and reproduction. They ensure everyone\u2014especially girls, women, and young people\u2014can access the health services and education they need to live safe and healthy lives.",
+      "subsections": [
+        {
+          "id": "srhr-purpose",
+          "title": "What Do SRHR Laws Do?",
+          "order": 1,
+          "content": "\u2022 Keep People Healthy: Provide access to services preventing unwanted pregnancies, STIs, and unsafe abortions.\n\u2022 Support Fairness: Prevent discrimination based on gender or sexual orientation.\n\u2022 Stop Violence: Protect against rape, child marriage, and female genital mutilation (FGM).\n\u2022 Educate and Provide Access: Ensure information and access to contraception, family planning, and pregnancy care."
+        },
+        {
+          "id": "srhr-importance",
+          "title": "Why Are SRHR Laws Important?",
+          "order": 2,
+          "content": "They protect human rights, reduce health risks, and promote dignity and freedom regardless of gender, age, or background."
+        }
+      ]
+    },
+    {
+      "id": "srhr-southern-africa",
+      "title": "SRHR Laws in Southern Africa",
+      "order": 2,
+      "content": "Southern Africa has made progress in developing SRHR frameworks, though challenges like unsafe abortion and HIV remain widespread.",
+      "subsections": [
+        {
+          "id": "zambia-laws",
+          "title": "Zambia",
+          "order": 1,
+          "content": "Zambia\u2019s legal framework includes several acts supporting SRHR, such as the Termination of Pregnancy Act (1972), Gender Equity and Equality Act (2015), Children\u2019s Code Act (2022), and Marriage Act. Together, they ensure access to family planning, safe abortion under certain conditions, and protection from child marriage."
+        },
+        {
+          "id": "south-africa-laws",
+          "title": "South Africa",
+          "order": 2,
+          "content": "Choice on Termination of Pregnancy Act (1996): Allows abortion on request up to 12 weeks, and under certain conditions up to 20 weeks. This makes South Africa one of the most accessible countries for abortion services in Africa."
+        },
+        {
+          "id": "zimbabwe-laws",
+          "title": "Zimbabwe",
+          "order": 3,
+          "content": "Termination of Pregnancy Act (1977): Abortion is restricted to cases of rape, incest, or threats to a woman's life or physical health. Stigma and service gaps still push many toward unsafe abortions."
+        },
+        {
+          "id": "namibia-laws",
+          "title": "Namibia",
+          "order": 4,
+          "content": "Abortion and Sterilisation Act (1975): Permits abortion only when life or health is at risk or in rape/incest cases. The law\u2019s restrictive nature leads many women to unsafe procedures."
+        }
+      ]
+    },
+    {
+      "id": "srhr-eastern-africa",
+      "title": "SRHR Laws in Eastern Africa",
+      "order": 3,
+      "content": "Eastern Africa faces persistent challenges like child marriage, FGM, and limited access to reproductive services.",
+      "subsections": [
+        {
+          "id": "kenya-laws",
+          "title": "Kenya",
+          "order": 1,
+          "content": "Sexual Offences Act (2006) protects against sexual violence. The Constitution (2010) allows abortion if a woman's life or health is in danger."
+        },
+        {
+          "id": "tanzania-laws",
+          "title": "Tanzania",
+          "order": 2,
+          "content": "Penal Code (Cap 16) allows abortion only when a woman's life is threatened or in rape/incest cases."
+        },
+        {
+          "id": "uganda-laws",
+          "title": "Uganda",
+          "order": 3,
+          "content": "Abortion laws are highly restrictive\u2014only allowed if the woman\u2019s life is in danger or in cases of rape/incest."
+        }
+      ]
+    },
+    {
+      "id": "srhr-western-africa",
+      "title": "SRHR Laws in Western Africa",
+      "order": 4,
+      "content": "Western Africa struggles with child marriage, FGM, and lack of access to contraception, limiting reproductive autonomy.",
+      "subsections": [
+        {
+          "id": "nigeria-laws",
+          "title": "Nigeria",
+          "order": 1,
+          "content": "Criminal Code (1990): Abortion is permitted only to save the woman\u2019s life."
+        },
+        {
+          "id": "ghana-laws",
+          "title": "Ghana",
+          "order": 2,
+          "content": "Criminal Offences Act (1960): Allows abortion in cases of rape, incest, or danger to the mother\u2019s health."
+        }
+      ]
+    },
+    {
+      "id": "srhr-africa-wide",
+      "title": "Africa-Wide SRHR Laws and Agreements",
+      "order": 5,
+      "content": "Continental frameworks guide African countries toward inclusive SRHR policies and gender equality.",
+      "subsections": [
+        {
+          "id": "maputo-protocol",
+          "title": "Maputo Protocol (2003)",
+          "order": 1,
+          "content": "A landmark AU agreement ensuring women's rights to family planning, safe abortion, and reproductive health services."
+        },
+        {
+          "id": "icpd-poa",
+          "title": "ICPD Programme of Action (1994)",
+          "order": 2,
+          "content": "Supports global reproductive health and education for all individuals."
+        },
+        {
+          "id": "abuja-declaration",
+          "title": "Abuja Declaration (2001)",
+          "order": 3,
+          "content": "Commits African leaders to allocate at least 15% of national budgets to health services."
+        },
+        {
+          "id": "sadc-protocol",
+          "title": "SADC Protocol on Gender and Development (2008)",
+          "order": 4,
+          "content": "Promotes gender equality and access to reproductive health services across the SADC region."
+        }
+      ]
+    },
+    {
+      "id": "srhr-challenges",
+      "title": "Challenges in Using SRHR Laws",
+      "order": 6,
+      "content": "Despite progress, cultural, financial, and political barriers limit the effectiveness of SRHR laws across Africa.",
+      "subsections": [
+        {
+          "id": "cultural-beliefs",
+          "title": "Cultural and Religious Beliefs",
+          "order": 1,
+          "content": "Resistance to contraception or abortion due to cultural norms and religious interpretations."
+        },
+        {
+          "id": "funding-gaps",
+          "title": "Lack of Funding",
+          "order": 2,
+          "content": "Limited budgets hinder quality healthcare and education services."
+        },
+        {
+          "id": "stigma",
+          "title": "Social Stigma",
+          "order": 3,
+          "content": "Shame or fear stops many from accessing SRHR services."
+        },
+        {
+          "id": "political-will",
+          "title": "Weak Political Support",
+          "order": 4,
+          "content": "Lack of prioritization in policy and funding slows progress."
+        }
+      ]
+    }
+  ]
+}

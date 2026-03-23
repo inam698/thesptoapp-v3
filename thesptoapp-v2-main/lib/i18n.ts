@@ -1,0 +1,69 @@
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import i18n from 'i18next';
+import { initReactI18next } from 'react-i18next';
+import { getLocales } from 'expo-localization';
+
+import en from '@/locales/en.json';
+import sw from '@/locales/sw.json';
+import zu from '@/locales/zu.json';
+import fr from '@/locales/fr.json';
+
+const LANGUAGE_KEY = '@spotapp:language';
+
+const resources = {
+  en: { translation: en },
+  sw: { translation: sw },
+  zu: { translation: zu },
+  fr: { translation: fr },
+};
+
+export const AVAILABLE_LANGUAGES = [
+  { code: 'en', label: 'English' },
+  { code: 'sw', label: 'Kiswahili' },
+  { code: 'zu', label: 'isiZulu' },
+  { code: 'fr', label: 'Français' },
+] as const;
+
+// Detect the device language or use saved preference
+async function getInitialLanguage(): Promise<string> {
+  try {
+    const saved = await AsyncStorage.getItem(LANGUAGE_KEY);
+    if (saved && Object.keys(resources).includes(saved)) return saved;
+  } catch {
+    // ignore
+  }
+
+  try {
+    const locales = getLocales();
+    const deviceLang = locales[0]?.languageCode ?? 'en';
+    if (Object.keys(resources).includes(deviceLang)) return deviceLang;
+  } catch {
+    // ignore
+  }
+
+  return 'en';
+}
+
+// Initialize i18n
+getInitialLanguage().then((lng) => {
+  // eslint-disable-next-line import/no-named-as-default-member
+  i18n.use(initReactI18next).init({
+    resources,
+    lng,
+    fallbackLng: 'en',
+    interpolation: {
+      escapeValue: false,
+    },
+    react: {
+      useSuspense: false,
+    },
+  });
+});
+
+export async function setAppLanguage(code: string): Promise<void> {
+  // eslint-disable-next-line import/no-named-as-default-member
+  await i18n.changeLanguage(code);
+  await AsyncStorage.setItem(LANGUAGE_KEY, code);
+}
+
+export default i18n;

@@ -1,0 +1,76 @@
+# ──────────────────────────────────────────────────────────────
+# EAS Build — creates a native binary and optionally submits to stores.
+#
+# Triggered manually only (workflow_dispatch) because native builds
+# are expensive and should be intentional.
+#
+# Required repository secrets:
+#   EXPO_TOKEN — an Expo access token with build permission.
+#
+# The Apple credentials (ASC API key) are already configured in
+# eas.json → submit.production.ios. EAS Build reads them
+# automatically during the build/submit step on Expo servers.
+# ──────────────────────────────────────────────────────────────
+name: EAS Build
+
+on:
+  workflow_dispatch:
+    inputs:
+      platform:
+        description: "Platform to build"
+        required: true
+        type: choice
+        options:
+          - ios
+          - android
+          - all
+      profile:
+        description: "EAS build profile"
+        required: true
+        type: choice
+        options:
+          - production
+          - preview
+        default: production
+      submit:
+        description: "Auto-submit to stores after build"
+        required: false
+        type: boolean
+        default: false
+
+defaults:
+  run:
+    working-directory: thesptoapp-v2-main
+
+concurrency:
+  group: eas-build-${{ github.event.inputs.platform }}
+  cancel-in-progress: false
+
+jobs:
+  build:
+    name: Build (${{ github.event.inputs.platform }}) — ${{ github.event.inputs.profile }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+          cache-dependency-path: thesptoapp-v2-main/package-lock.json
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install EAS CLI
+        run: npm install -g eas-cli
+
+      - name: Run EAS Build
+        run: |
+          SUBMIT_FLAG=""
+          if [ "${{ github.event.inputs.submit }}" = "true" ]; then
+            SUBMIT_FLAG="--auto-submit"
+          fi
+          eas build --platform ${{ github.event.inputs.platform }} --profile ${{ github.event.inputs.profile }} $SUBMIT_FLAG --non-interactive
+        env:
+          EXPO_TOKEN: ${{ secrets.EXPO_TOKEN }}

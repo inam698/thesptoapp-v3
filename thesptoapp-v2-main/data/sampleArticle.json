@@ -1,0 +1,168 @@
+{
+  "id": "sti-hiv-comprehensive-guide",
+  "title": "Sexually Transmitted Infections (STIs) and HIV/AIDS: A Comprehensive Guide",
+  "summary": "Everything you need to know about STIs and HIV/AIDS, including prevention, symptoms, testing, treatment, and support resources in Zambia.",
+  "category": "hiv-stis",
+  "tags": ["STI", "HIV", "AIDS", "prevention", "testing", "treatment", "sexual-health", "Zambia"],
+  "featuredImage": "https://storage.googleapis.com/thespot-app/images/sti-awareness.jpg",
+  "estimatedReadTime": 25,
+  "lastUpdated": "2024-01-15T00:00:00Z",
+  "publishedDate": "2024-01-10T00:00:00Z",
+  "author": "The Spot Health Team",
+  "sources": [
+    "https://www.cdc.gov/std/default.htm",
+    "https://www.cdc.gov/hiv/basics/whatishiv.html",
+    "https://www.unaids.org/en/regionscountries/countries/zambia"
+  ],
+  "isPublished": true,
+  "difficulty": "beginner",
+  "targetAudience": ["young-adults", "sexually-active"],
+  "sections": [
+    {
+      "id": "what-are-stis",
+      "title": "What Are STIs?",
+      "order": 1,
+      "content": "STIs (sexually transmitted infections) are infections you can get from any kind of sexual activity, vaginal, anal, or oral. You may also hear the term STD (sexually transmitted disease); it means the same thing, but STI is more commonly used now.\n\nSTIs are super common, especially among sexually active young people. Some of the most well-known symptoms are itching, burning, or unusual discharge from the genitals, but here's the catch: some STIs have no symptoms at all, which is why getting tested regularly is so important.",
+      "subsections": [
+        {
+          "id": "sti-risks",
+          "title": "Health Risks",
+          "order": 1,
+          "content": "Anyone who has sex is at risk of getting an STI, including people living with HIV. When left untreated, some STIs can lead to serious health problems, including:\n• Infertility (trouble getting pregnant)\n• Ectopic pregnancy (when a pregnancy happens outside the womb)\n• Nerve and heart issues\n• Stillbirth (baby dies before birth)\n• Higher chances of getting or passing on HIV"
+        }
+      ]
+    },
+    {
+      "id": "how-stis-spread",
+      "title": "How Are STIs Spread?",
+      "order": 2,
+      "content": "STIs spread in several ways, and understanding these transmission methods is crucial for prevention.",
+      "subsections": [
+        {
+          "id": "sexual-transmission",
+          "title": "Through Sexual Activity",
+          "order": 1,
+          "content": "Most STIs spread when fluids or skin from one person come into contact with another person's body during sex. This includes:\n• Vaginal, anal, or oral sex without protection\n• Bodily fluids like semen, vaginal fluid, blood, or rectal fluids can carry infections like HIV, gonorrhoea, and chlamydia\n• Skin-to-skin contact with infected areas can spread herpes and HPV, even when there are no visible sores\n• Contact with sores (like those from syphilis or herpes) can pass the infection during sex\n• Oral sex can also spread STIs like gonorrhoea, syphilis, herpes, and HPV\n• Anal sex carries a higher risk because the rectum is more delicate and can tear easily"
+        },
+        {
+          "id": "blood-contact",
+          "title": "Through Blood Contact",
+          "order": 2,
+          "content": "STIs like HIV, hepatitis B, and hepatitis C can spread when blood from someone who's infected gets into another person's bloodstream. This can happen through:\n• Sharing needles (for drugs, tattoos, or piercings)\n• Unsterilised medical equipment (rare, but possible in places with poor healthcare systems)\n• Receiving contaminated blood (rare now due to blood screening)"
+        },
+        {
+          "id": "mother-to-child",
+          "title": "From Parent to Baby",
+          "order": 3,
+          "content": "STIs can pass from a pregnant person to their baby during delivery, which is called vertical transmission. Here's how it happens:\n• Chlamydia and gonorrhoea can infect the baby's eyes or lungs during birth\n• Syphilis can pass through the placenta or during birth\n• HIV can be passed through blood and vaginal fluids during delivery\n• Herpes (HSV) can cause a serious condition in babies called neonatal herpes"
+        }
+      ]
+    },
+    {
+      "id": "symptoms-detection",
+      "title": "Symptoms and Early Detection",
+      "order": 3,
+      "content": "STIs don't always look or feel the same. Some people have symptoms, and others don't notice anything at all. That's why regular testing is so important, even if you feel fine.",
+      "subsections": [
+        {
+          "id": "common-symptoms",
+          "title": "Common Symptoms",
+          "order": 1,
+          "content": "Here are signs to look out for:\n• Unusual discharge (yellow, green, or foul-smelling)\n• Pain or burning when urinating\n• Sores, blisters, or warts on genitals\n• Genital itching or irritation\n• Pain during sex\n• Lower abdominal pain\n• Unusual bleeding\n• Swollen lymph nodes\n• Flu-like symptoms\n• Eye infections"
+        },
+        {
+          "id": "asymptomatic-infections",
+          "title": "Why Testing Matters Without Symptoms",
+          "order": 2,
+          "content": "Many people with STIs like chlamydia, gonorrhoea, and HPV don't feel any different. That means they can pass the infection to others without knowing. Regular testing is the only way to know for sure and helps catch infections early, before they cause damage or spread further."
+        }
+      ]
+    },
+    {
+      "id": "testing-treatment",
+      "title": "Testing and Treatment",
+      "order": 4,
+      "content": "Getting tested and treated for STIs is straightforward and effective. Early detection and treatment prevent complications and reduce transmission.",
+      "subsections": [
+        {
+          "id": "when-to-test",
+          "title": "When Should You Get Tested?",
+          "order": 1,
+          "content": "• If you have any symptoms\n• If you've had unprotected sex\n• If you've started seeing a new partner\n• If you have multiple partners\n• If your partner has tested positive or shows symptoms"
+        },
+        {
+          "id": "testing-zambia",
+          "title": "Where to Test in Zambia",
+          "order": 2,
+          "content": "You can get tested at hospitals, clinics, and STI centres across Zambia. Many NGOs and community groups offer free or low-cost testing, and some places even provide mobile testing or testing during outreach events."
+        }
+      ]
+    },
+    {
+      "id": "types-of-stis",
+      "title": "Types of STIs",
+      "order": 5,
+      "content": "STIs are caused by bacteria, viruses, or parasites. Understanding the different types helps with prevention and treatment.",
+      "subsections": [
+        {
+          "id": "bacterial-stis",
+          "title": "Bacterial STIs",
+          "order": 1,
+          "content": "Bacterial STIs like chlamydia, gonorrhoea, and syphilis can be completely cured with proper antibiotic treatment when caught early."
+        },
+        {
+          "id": "viral-stis",
+          "title": "Viral STIs",
+          "order": 2,
+          "content": "Viral STIs like HPV, herpes, hepatitis B, and HIV cannot be cured but can be effectively managed with treatment and medication."
+        }
+      ]
+    },
+    {
+      "id": "hiv-aids-information",
+      "title": "HIV/AIDS Comprehensive Information",
+      "order": 6,
+      "content": "HIV stands for Human Immunodeficiency Virus. It's a virus that attacks your immune system. With proper treatment, people living with HIV can live full, healthy lives.",
+      "subsections": [
+        {
+          "id": "hiv-prevention",
+          "title": "Prevention",
+          "order": 1,
+          "content": "• Use condoms every time you have sex\n• Get tested regularly\n• Don't share needles or sharp tools\n• Consider PrEP if you're at high risk\n• Know about PEP for emergency situations"
+        },
+        {
+          "id": "hiv-testing",
+          "title": "Testing and Symptoms",
+          "order": 2,
+          "content": "HIV has three main stages, and testing is the only way to know your status. Rapid tests are available and give results in 20-30 minutes."
+        },
+        {
+          "id": "hiv-treatment",
+          "title": "Treatment and Care",
+          "order": 3,
+          "content": "ART (Antiretroviral Therapy) is highly effective at managing HIV. Taking medication daily as prescribed allows people to live normal, healthy lives."
+        }
+      ]
+    },
+    {
+      "id": "support-resources",
+      "title": "Support and Resources",
+      "order": 7,
+      "content": "You are not alone. There are many support systems and resources available in Zambia and globally.",
+      "subsections": [
+        {
+          "id": "zambia-resources",
+          "title": "Resources in Zambia",
+          "order": 1,
+          "content": "• Public healthcare facilities\n• Private clinics and hospitals\n• NGOs and community services\n• Youth-friendly clinics\n• Mobile clinics\n• Community health workers"
+        },
+        {
+          "id": "support-systems",
+          "title": "Support Systems",
+          "order": 2,
+          "content": "• Support groups (in-person and online)\n• Mental health care and counseling\n• Community programs\n• Stigma awareness programs\n• Home visits and mobile clinics"
+        }
+      ]
+    }
+  ]
+} 
