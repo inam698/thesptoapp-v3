@@ -1,11 +1,26 @@
 import { db } from '@/lib/firebase';
 import { addDoc, collection, doc, increment, updateDoc } from 'firebase/firestore';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+
+/** Check if the user has opted out of analytics in profile settings. */
+async function isAnalyticsEnabled(): Promise<boolean> {
+  try {
+    const raw = await AsyncStorage.getItem('profile_settings');
+    if (raw) {
+      const parsed = JSON.parse(raw);
+      return parsed?.privacy?.analytics !== false;
+    }
+  } catch { /* default to enabled */ }
+  return true;
+}
 
 /**
  * Track an article view. Fires once per article open.
+ * Respects the user's analytics privacy toggle.
  */
 export async function trackArticleView(articleId: string, userId?: string): Promise<void> {
   try {
+    if (!(await isAnalyticsEnabled())) return;
     // Log the view event
     await addDoc(collection(db, 'article_views'), {
       articleId,
@@ -34,6 +49,7 @@ export async function trackReadTime(
   userId?: string
 ): Promise<void> {
   try {
+    if (!(await isAnalyticsEnabled())) return;
     await addDoc(collection(db, 'article_views'), {
       articleId,
       userId: userId || 'anonymous',

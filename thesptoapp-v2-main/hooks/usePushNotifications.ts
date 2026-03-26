@@ -117,6 +117,23 @@ async function syncLocalNotifications(): Promise<void> {
       },
     });
   }
+
+  if (prefs.periodReminders) {
+    // Every day at 8:00 — acts as a gentle daily check-in.
+    // The user can turn it off in Profile > Notifications.
+    await Notifications.scheduleNotificationAsync({
+      content: {
+        title: "Period Reminder 🌸",
+        body: "Don't forget to log today in your period tracker.",
+        sound: "default",
+      },
+      trigger: {
+        type: Notifications.SchedulableTriggerInputTypes.DAILY,
+        hour: 8,
+        minute: 0,
+      },
+    });
+  }
 }
 
 export function usePushNotifications(userId: string | null) {
