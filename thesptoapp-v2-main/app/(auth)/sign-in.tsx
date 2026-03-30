@@ -7,7 +7,7 @@ import { sendPasswordReset, signIn } from '@/lib/auth';
 import { Ionicons } from '@expo/vector-icons';
 import { LinearGradient } from 'expo-linear-gradient';
 import { useRouter } from 'expo-router';
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import {
     Alert,
     Image,
@@ -38,8 +38,15 @@ export default function SignInScreen() {
   const [resetEmail, setResetEmail] = useState('');
   const [isResetting, setIsResetting] = useState(false);
 
+  // Ref-based guard prevents double-fire even if state update is batched
+  const loginInFlight = useRef(false);
+
   const handleContinueAsGuest = async () => {
-    await setGuestMode(true);
+    try {
+      await setGuestMode(true);
+    } catch (error: any) {
+      console.error('[SignIn] Guest mode error:', error?.message || error);
+    }
   };
 
   const validateForm = () => {
@@ -63,32 +70,35 @@ export default function SignInScreen() {
 
   const handleSignIn = async () => {
     if (!validateForm()) return;
-    if (isLoading) return; // Prevent double-tap
+    // Double-tap guard: ref check + state check
+    if (isLoading || loginInFlight.current) return;
 
+    loginInFlight.current = true;
     setIsLoading(true);
     setErrors({});
 
-    if (__DEV__) console.log('Login attempt', { email });
+    console.log('[SignIn] Login attempt for:', email.trim());
 
     try {
-      const result = await signIn({ email, password });
+      const result = await signIn({ email: email.trim(), password });
 
       if (result.error) {
-        if (__DEV__) console.log('Login error', result.error);
+        console.warn('[SignIn] Login failed:', result.error);
         Alert.alert('Sign In Failed', result.error);
       } else {
-        if (__DEV__) console.log('Login success', result.user?.uid);
+        console.log('[SignIn] Login success, uid:', result.user?.uid);
         // Navigation is handled automatically by the root layout
         // when Firebase auth state changes to authenticated.
       }
-    } catch (error) {
-      if (__DEV__) console.log('Login error (uncaught)', error);
+    } catch (error: any) {
+      console.error('[SignIn] Uncaught login error:', error?.message || error);
       Alert.alert(
         'Sign In Failed',
         'An unexpected error occurred. Please check your connection and try again.'
       );
     } finally {
       setIsLoading(false);
+      loginInFlight.current = false;
     }
   };
 
@@ -107,16 +117,22 @@ export default function SignInScreen() {
       return;
     }
     setIsResetting(true);
-    const result = await sendPasswordReset(resetEmail.trim());
-    setIsResetting(false);
-    if (result.error) {
-      Alert.alert('Error', result.error);
-    } else {
-      setShowForgotModal(false);
-      Alert.alert(
-        'Password Reset Email Sent',
-        'Check your email for instructions to reset your password.'
-      );
+    try {
+      const result = await sendPasswordReset(resetEmail.trim());
+      if (result.error) {
+        Alert.alert('Error', result.error);
+      } else {
+        setShowForgotModal(false);
+        Alert.alert(
+          'Password Reset Email Sent',
+          'Check your email for instructions to reset your password.'
+        );
+      }
+    } catch (error: any) {
+      console.error('[SignIn] Password reset error:', error?.message || error);
+      Alert.alert('Error', 'Something went wrong. Please try again.');
+    } finally {
+      setIsResetting(false);
     }
   };
 

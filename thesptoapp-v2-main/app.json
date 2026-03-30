@@ -16,12 +16,12 @@
       "enabled": true,
       "checkAutomatically": "ON_LOAD",
       "fallbackToCacheTimeout": 0,
-      "url": "https://u.expo.dev/38a9ec42-f71d-4462-95c5-c80e1244d498"
+      "url": "https://u.expo.dev/7afa0315-0ed5-40d7-aa1d-90c8ea3bfc94"
     },
     "ios": {
       "supportsTablet": true,
       "bundleIdentifier": "com.chombazm.thespotapp",
-      "buildNumber": "16",
+      "buildNumber": "17",
       "infoPlist": {
         "ITSAppUsesNonExemptEncryption": false,
         "NSPhotoLibraryUsageDescription": "The Spot App needs access to your photo library to set your profile picture.",
@@ -37,6 +37,11 @@
       "edgeToEdgeEnabled": true,
       "package": "org.thespotapp.feminist",
       "permissions": [
+        "android.permission.CAMERA",
+        "android.permission.READ_MEDIA_IMAGES",
+        "android.permission.READ_EXTERNAL_STORAGE",
+        "android.permission.INTERNET",
+        "android.permission.RECORD_AUDIO",
         "android.permission.CAMERA",
         "android.permission.READ_MEDIA_IMAGES",
         "android.permission.READ_EXTERNAL_STORAGE",

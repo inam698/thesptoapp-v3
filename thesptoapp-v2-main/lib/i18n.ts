@@ -44,20 +44,31 @@ async function getInitialLanguage(): Promise<string> {
   return 'en';
 }
 
-// Initialize i18n
+// Initialize i18n synchronously with English so components always have a working
+// t() function on the very first render. If this runs after the component tree
+// has already mounted (async init), useTranslation() would access an unset
+// I18nextContext and throw — which the ErrorBoundary catches as "Something went
+// wrong". Initializing synchronously prevents that race condition on fast devices
+// (e.g. iPad Air M3) where the JS bundle executes before any Promise resolves.
+// eslint-disable-next-line import/no-named-as-default-member
+i18n.use(initReactI18next).init({
+  resources,
+  lng: 'en', // safe default — updated below once AsyncStorage resolves
+  fallbackLng: 'en',
+  interpolation: {
+    escapeValue: false,
+  },
+  react: {
+    useSuspense: false,
+  },
+});
+
+// Async: switch to the user's saved/device language once we know it
 getInitialLanguage().then((lng) => {
-  // eslint-disable-next-line import/no-named-as-default-member
-  i18n.use(initReactI18next).init({
-    resources,
-    lng,
-    fallbackLng: 'en',
-    interpolation: {
-      escapeValue: false,
-    },
-    react: {
-      useSuspense: false,
-    },
-  });
+  if (lng !== i18n.language) {
+    // eslint-disable-next-line import/no-named-as-default-member
+    i18n.changeLanguage(lng);
+  }
 });
 
 export async function setAppLanguage(code: string): Promise<void> {
