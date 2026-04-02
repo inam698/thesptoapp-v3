@@ -1,10 +1,8 @@
 /**
  * The Spot App — Official Brand Color System
  *
- * Soft yellow × lighter purple palette
- *
- * Primary (Wisteria):  #C9A4D8   – soft wisteria
- * Background (Cream):  #FFFAE8   – warm butter cream
+ * Primary (Wisteria):  #C69FD5   – soft wisteria purple
+ * Background (Lemon):  #FDFDC9   – soft lemon yellow
  *
  * All UI components must import and use SpotColors.
  */
@@ -23,11 +21,11 @@ export const SpotColors = {
   textOnPrimary: "#FFFFFF",
 
   // ─── Border / Shadow ────────────────────────
-  border: "#EDE4F2",
+  border: "#E8D5F5",
   shadow: "#000000",
 
   // ─── Derived (lighter tint for gradients) ─
-  primaryLight: "#E6D1F2",
+  primaryLight: "#E8D0F7",
 
   // ─── Status (functional, not brand) ───────
   error: "#FF5252",
@@ -52,8 +50,8 @@ export const SpotColors = {
   lavender: "#C4B0DB",
   softPink: "#F2E0EA",
   gradientLight: "#F6EFF9",
-  gradientMid: "#E6D1F2",
-  gradientCard: "#FBF6FF",
+  gradientMid: "#E8D0F7",
+  gradientCard: "#FDFDC9",
   textOnSecondary: "#FFFFFF",
   textOnAccent: "#2E2040",
 } as const;
