@@ -16,6 +16,9 @@
     "production": {
       "autoIncrement": true,
       "channel": "production",
+      "cache": {
+        "disabled": true
+      },
       "ios": {
         "simulator": false,
         "buildConfiguration": "Release",
