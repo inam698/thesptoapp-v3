@@ -19,6 +19,8 @@
       "cache": {
         "disabled": true
       },
+      "node": "20.19.2",
+      "installCommand": "npm install --legacy-peer-deps",
       "android": {
         "resourceClass": "default",
         "image": "latest"
