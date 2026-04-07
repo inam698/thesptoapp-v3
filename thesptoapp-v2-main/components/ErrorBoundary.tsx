@@ -1,4 +1,5 @@
 import { SpotColors } from '@/constants/Colors';
+import * as Updates from 'expo-updates';
 import React, { Component, ErrorInfo, ReactNode } from 'react';
 import { Platform, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 
@@ -8,16 +9,17 @@ interface Props {
 
 interface State {
   hasError: boolean;
+  isReloading: boolean;
 }
 
 export default class ErrorBoundary extends Component<Props, State> {
   constructor(props: Props) {
     super(props);
-    this.state = { hasError: false };
+    this.state = { hasError: false, isReloading: false };
   }
 
   static getDerivedStateFromError(): State {
-    return { hasError: true };
+    return { hasError: true, isReloading: false };
   }
 
   componentDidCatch(error: Error, info: ErrorInfo) {
@@ -31,8 +33,17 @@ export default class ErrorBoundary extends Component<Props, State> {
     console.error('[ErrorBoundary] Component stack:', info.componentStack);
   }
 
-  handleRetry = () => {
-    this.setState({ hasError: false });
+  handleRetry = async () => {
+    if (this.state.isReloading) return;
+    this.setState({ isReloading: true });
+
+    try {
+      // Try a true JS bundle reload first so users don't get stuck on the same crashed tree.
+      await Updates.reloadAsync();
+    } catch (e) {
+      console.error('[ErrorBoundary] reloadAsync failed, falling back to local reset:', e);
+      this.setState({ hasError: false, isReloading: false });
+    }
   };
 
   render() {
@@ -44,8 +55,14 @@ export default class ErrorBoundary extends Component<Props, State> {
           <Text style={styles.message}>
             The Spot App hit a bump. This is usually temporary — tap below to reload.
           </Text>
-          <TouchableOpacity style={styles.button} onPress={this.handleRetry}>
-            <Text style={styles.buttonText}>Reload App</Text>
+          <TouchableOpacity
+            style={[styles.button, this.state.isReloading ? styles.buttonDisabled : null]}
+            onPress={this.handleRetry}
+            disabled={this.state.isReloading}
+          >
+            <Text style={styles.buttonText}>
+              {this.state.isReloading ? 'Reloading...' : 'Reload App'}
+            </Text>
           </TouchableOpacity>
           <Text style={styles.hint}>
             If this keeps happening, try closing and reopening the app.
@@ -88,6 +105,9 @@ const styles = StyleSheet.create({
     paddingHorizontal: 32,
     paddingVertical: 14,
     borderRadius: 24,
+  },
+  buttonDisabled: {
+    opacity: 0.75,
   },
   buttonText: {
     color: SpotColors.textOnPrimary,
