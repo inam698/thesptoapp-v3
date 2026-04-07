@@ -25,6 +25,8 @@ const firebaseConfig = {
   measurementId: "G-VKX5WNJ8XH"
 };
 
+export const FIREBASE_API_KEY = firebaseConfig.apiKey;
+
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 

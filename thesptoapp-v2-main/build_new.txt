@@ -1,0 +1,14 @@
+﻿
+ΓÜá∩╕Å Detected that your app uses Expo Go for development, this is not recommended when building production apps.
+Learn more: https://expo.fyi/why-not-build-expo-go-for-production
+To suppress this warning, set EAS_BUILD_NO_EXPO_GO_WARNING=true.
+
+
+request to https://api.expo.dev/graphql failed, reason: getaddrinfo ENOTFOUND api.expo.dev
+node.exe :     Error: GraphQL request failed.
+At line:1 char:1
++ & "C:\Program Files\nodejs/node.exe" "C:\Program Files\nodejs/node_mo ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (    Error: GraphQL request failed.:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 

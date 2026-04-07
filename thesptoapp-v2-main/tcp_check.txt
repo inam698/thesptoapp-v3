@@ -1,0 +1,11 @@
+﻿
+
+ComputerName     : api.expo.dev
+RemoteAddress    : 104.18.5.104
+RemotePort       : 443
+InterfaceAlias   : Wi-Fi
+SourceAddress    : 192.168.1.103
+TcpTestSucceeded : True
+
+
+

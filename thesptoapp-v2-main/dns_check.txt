@@ -1,0 +1,17 @@
+﻿nslookup : Non-authoritative answer:
+At line:1 char:1
++ nslookup api.expo.dev 2>&1 | Out-File dns_check.txt -Encoding utf8; T ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (Non-authoritative answer::String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+
+Server:  UnKnown
+Address:  192.168.1.1
+
+Name:    api.expo.dev
+Addresses:  2606:4700::6812:468
+	  2606:4700::6812:568
+	  104.18.5.104
+	  104.18.4.104
+

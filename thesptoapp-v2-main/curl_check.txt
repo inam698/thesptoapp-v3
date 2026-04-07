@@ -1,0 +1,29 @@
+﻿curl.exe :   % Total    % Received % Xferd  Average Speed  Time    Time    Time   Current
+At line:1 char:152
++ ... -Encoding utf8; curl.exe -I https://api.expo.dev/graphql 2>&1 | Out-F ...
++                     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (  % Total    % ... Time   Current:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+                                 Dload  Upload  Total   Spent   Left   Speed
+
+  0      0   0      0   0      0      0      0                              0
+  0      0   0      0   0      0      0      0           00:01              0
+  0      0   0      0   0      0      0      0           00:01              0
+  0      0   0      0   0      0      0      0           00:01              0
+  0      0   0      0   0      0      0      0           00:01              0
+HTTP/1.1 405 Method Not Allowed
+Date: Tue, 07 Apr 2026 15:33:31 GMT
+Connection: keep-alive
+vary: Accept-Encoding, Origin
+content-security-policy: default-src 'none';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests
+x-frame-options: SAMEORIGIN
+x-content-type-options: nosniff
+allow: POST
+via: 1.1 google
+strict-transport-security: max-age=31536000; includeSubDomains
+alt-svc: h3=":443"; ma=86400
+cf-cache-status: DYNAMIC
+Server: cloudflare
+CF-RAY: 9e8a17548a20dfa9-CPT
+

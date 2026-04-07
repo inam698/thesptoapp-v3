@@ -15,7 +15,7 @@ import {
 import { collection, deleteDoc, doc, getDoc, getDocs, serverTimestamp, setDoc, updateDoc } from 'firebase/firestore';
 import { Platform } from 'react-native';
 import { appendAuthDiagnostic } from './authDiagnostics';
-import { auth, db, waitForAuthReady } from './firebase';
+import { auth, db, FIREBASE_API_KEY } from './firebase';
 
 export interface AuthResponse {
   user: User | null;
@@ -105,6 +105,44 @@ export async function checkConnectivity(): Promise<boolean> {
   return probe('https://www.google.com/generate_204', 5000);
 }
 
+/**
+ * Direct REST API sign-in bypassing the Firebase JS SDK entirely.
+ * Falls back to identitytoolkit REST API — works even when the SDK auth
+ * instance is in a broken state or authStateReady() never resolves.
+ */
+async function signInViaRestApi(
+  email: string,
+  password: string,
+): Promise<{ idToken: string; localId: string; email: string } | null> {
+  try {
+    const controller = new AbortController();
+    const timer = setTimeout(() => controller.abort(), 15000);
+    const res = await fetch(
+      `https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=${FIREBASE_API_KEY}`,
+      {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email, password, returnSecureToken: true }),
+        signal: controller.signal,
+      },
+    );
+    clearTimeout(timer);
+    const data = await res.json();
+    if (!res.ok) {
+      void appendAuthDiagnostic('auth:restApi:error', {
+        status: res.status,
+        errorMessage: data?.error?.message,
+      });
+      return null;
+    }
+    void appendAuthDiagnostic('auth:restApi:success', { localId: data.localId });
+    return data;
+  } catch (e: any) {
+    void appendAuthDiagnostic('auth:restApi:exception', { message: e?.message });
+    return null;
+  }
+}
+
 // Sign up with email and password
 export async function signUp({ email, password, displayName }: SignUpData): Promise<AuthResponse> {
   try {
@@ -175,23 +213,20 @@ export async function signUp({ email, password, displayName }: SignUpData): Prom
 
 // Sign in with email and password
 export async function signIn({ email, password }: SignInData): Promise<AuthResponse> {
+  const startedAt = Date.now();
   try {
-    const startedAt = Date.now();
     // Validate that auth is initialised before attempting sign-in
     if (!auth) {
       console.error('[Auth] Firebase auth is not initialised');
       void appendAuthDiagnostic('auth:signIn:auth-missing');
-      return { user: null, error: 'Sign in is temporarily unavailable. Please restart the app and try again.' };
+      // Even without a valid auth instance, try the REST API as last resort
+      return signInWithRestFallback(email, password, startedAt);
     }
 
-    const authReady = await waitForAuthReady(10000);
-    if (!authReady) {
-      void appendAuthDiagnostic('auth:signIn:auth-not-ready-timeout', { timeoutMs: 10000 },);
-      return {
-        user: null,
-        error: 'Sign in is still preparing. Please wait a moment and try again.'
-      };
-    }
+    // NOTE: We intentionally do NOT gate on waitForAuthReady here.
+    // signInWithEmailAndPassword makes a direct HTTP call to identitytoolkit.googleapis.com
+    // and does NOT depend on the auth state being resolved. Gating on auth readiness
+    // was causing sign-in to fail when authStateReady() hung on iOS 26.4.
 
     const normalizedEmail = normalizeEmailInput(email);
     const normalizedPassword = normalizePasswordInput(password);
@@ -276,24 +311,91 @@ export async function signIn({ email, password }: SignInData): Promise<AuthRespo
         return { user, error: null };
       }
 
-      // Non-retryable, non-credential error — let outer catch handle it
-      throw firstError;
+      // Non-retryable, non-credential error — try REST API fallback
+      console.warn('[Auth] signIn SDK non-retryable error, trying REST API fallback:', firstError?.code || firstError?.message);
+      return signInWithRestFallback(normalizedEmail, normalizedPassword, startedAt);
     }
   } catch (error: any) {
     // Log in both dev and production so device logs can be inspected
-    console.error('[Auth] signIn failed:', error?.code || error?.message || error);
-    void appendAuthDiagnostic('auth:signIn:error', {
+    console.error('[Auth] signIn SDK failed:', error?.code || error?.message || error);
+    void appendAuthDiagnostic('auth:signIn:sdkFailed:tryingRest', {
       code: error?.code,
       message: error?.message,
     });
 
-    // Handle timeout specifically
-    if (error instanceof Error && error.message.includes('timed out')) {
-      return { user: null, error: 'Sign in is taking too long. Please check your internet connection and try again.' };
-    }
-    const authError = error as AuthError;
-    return { user: null, error: getAuthErrorMessage(authError) };
+    // Instead of immediately failing, try the REST API as a fallback.
+    // This bypasses the Firebase JS SDK entirely and makes a direct HTTP call.
+    const normalizedEmail = normalizeEmailInput(email);
+    const normalizedPassword = normalizePasswordInput(password);
+    return signInWithRestFallback(normalizedEmail, normalizedPassword, startedAt);
   }
+}
+
+/**
+ * Fallback sign-in path: verify credentials via Firebase REST API, then
+ * retry the SDK call. This handles cases where the Firebase JS SDK's internal
+ * state machine is broken (e.g. authStateReady never resolves on iOS 26+)
+ * but the network is actually fine.
+ */
+async function signInWithRestFallback(
+  email: string,
+  password: string,
+  startedAt: number,
+): Promise<AuthResponse> {
+  void appendAuthDiagnostic('auth:signIn:restFallback:start');
+
+  const restResult = await signInViaRestApi(email, password);
+
+  if (!restResult) {
+    // REST API also failed — genuine network or credential issue
+    return {
+      user: null,
+      error: 'Unable to sign in. Please check your email, password, and internet connection, then try again.',
+    };
+  }
+
+  // REST succeeded — credentials are valid. Try the SDK one more time.
+  console.log('[Auth] REST API verified credentials, retrying SDK sign-in...');
+  void appendAuthDiagnostic('auth:signIn:restFallback:restOk:retryingSdk');
+
+  if (auth) {
+    // Give the SDK a moment — the REST call may have "warmed up" the network path
+    await new Promise(r => setTimeout(r, 500));
+
+    for (let attempt = 1; attempt <= 3; attempt++) {
+      try {
+        const userCredential = await withTimeout(
+          signInWithEmailAndPassword(auth, email, password),
+          15000,
+          `Sign in (REST-validated retry ${attempt})`,
+        );
+        const user = userCredential.user;
+        console.log('[Auth] signIn success via REST-validated retry, uid:', user.uid);
+        updateUserDocAfterSignIn(user).catch(() => {});
+        void appendAuthDiagnostic('auth:signIn:restFallback:sdkRetrySuccess', {
+          uid: user.uid,
+          attempt,
+          elapsedMs: Date.now() - startedAt,
+        });
+        return { user, error: null };
+      } catch (retryErr: any) {
+        console.warn(`[Auth] SDK retry ${attempt}/3 failed:`, retryErr?.code || retryErr?.message);
+        void appendAuthDiagnostic('auth:signIn:restFallback:sdkRetryFail', {
+          attempt,
+          code: retryErr?.code,
+          message: retryErr?.message,
+        });
+        if (attempt < 3) await new Promise(r => setTimeout(r, 1000 * attempt));
+      }
+    }
+  }
+
+  // SDK retries all failed but REST proved credentials are valid.
+  // Return a special error that the UI can handle more gracefully.
+  return {
+    user: null,
+    error: 'Your credentials are correct but sign-in encountered a temporary issue. Please close and reopen the app, then try again.',
+  };
 }
 
 // Separated Firestore update so it never blocks sign-in

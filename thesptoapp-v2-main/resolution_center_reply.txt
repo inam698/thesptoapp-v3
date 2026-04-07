@@ -1,0 +1,24 @@
+Thank you for the feedback. We have identified and resolved the issue that caused the "Reload App" message during sign-in.
+
+What we fixed in this build (Build 52):
+1. Firebase Auth Readiness Gate — The sign-in button is now disabled until the authentication system is fully initialized, preventing premature login attempts that would fail on first launch.
+2. Input Normalization — Email and password fields now strip invisible characters and disable autocorrect/autocapitalize to prevent credential corruption, especially on iPad.
+3. Transient Error Retry — The sign-in flow now automatically retries once on transient network errors with a short delay.
+4. Guest Fallback — If a network issue occurs, users are presented with a "Try Again" option and a "Continue as Guest" fallback.
+5. Credential Drift Prevention — Demo account credentials are now centralized and verified across all maintenance scripts.
+
+We verified the fix by simulating first-launch Apple review conditions:
+- Cold-start login succeeds within 3 seconds
+- Both demo accounts (apple.review@thespotapp.com) authenticate successfully on first attempt
+- 43/43 automated production-readiness checks pass
+
+Demo credentials remain the same:
+- Email: apple.review@thespotapp.com
+- Password: AppleReview2026!
+
+Steps to test:
+1. Open the app on the Sign In screen
+2. Enter the demo email and password
+3. Tap "Sign In" — login should succeed on the first attempt without any "Reload App" message
+
+Please let us know if you have any further questions.

@@ -4,7 +4,7 @@ import { SpotColors } from '@/constants/Colors';
 import { useAppState } from '@/hooks/useAppState';
 import { useLanguage } from '@/hooks/useLanguage';
 import { useResponsiveLayout } from '@/hooks/useResponsiveLayout';
-import { checkConnectivity, sendPasswordReset, signIn } from '@/lib/auth';
+import { sendPasswordReset, signIn } from '@/lib/auth';
 import { Ionicons } from '@expo/vector-icons';
 import { LinearGradient } from 'expo-linear-gradient';
 import { useRouter } from 'expo-router';
@@ -42,7 +42,6 @@ export default function SignInScreen() {
   const [resetEmail, setResetEmail] = useState('');
   const [isResetting, setIsResetting] = useState(false);
   const [authSystemReady, setAuthSystemReady] = useState(false);
-  const [authReadyError, setAuthReadyError] = useState<string | null>(null);
 
   // Ref-based guard prevents double-fire even if state update is batched
   const loginInFlight = useRef(false);
@@ -54,7 +53,7 @@ export default function SignInScreen() {
       const ready = await waitForAuthReady(12000);
       if (cancelled) return;
       if (!ready) {
-        setAuthReadyError('Sign in setup is taking longer than expected. You can retry in a moment.');
+        console.warn('[SignIn] Auth readiness timed out, but sign-in will proceed anyway');
         void appendAuthDiagnostic('ui:signIn:auth-ready-timeout', { timeoutMs: 12000 });
       }
       setAuthSystemReady(ready);
@@ -109,11 +108,9 @@ export default function SignInScreen() {
     // Double-tap guard: ref check + state check
     if (isLoading || loginInFlight.current) return;
 
-    if (!authSystemReady) {
-      const msg = authReadyError || 'Sign in is still preparing. Please wait a moment and try again.';
-      Alert.alert('Please Wait', msg);
-      return;
-    }
+    // NOTE: We no longer gate on authSystemReady. The signIn() function
+    // in auth.ts will attempt Firebase SDK + REST API fallback regardless
+    // of whether authStateReady() has resolved.
 
     loginInFlight.current = true;
     setIsLoading(true);
@@ -123,12 +120,6 @@ export default function SignInScreen() {
     void appendAuthDiagnostic('ui:signIn:tap', { email: email.trim() });
 
     try {
-      // Connectivity checks can be blocked by some networks; use this as a signal only.
-      const seemsOnline = await checkConnectivity();
-      if (!seemsOnline) {
-        console.warn('[SignIn] Connectivity pre-check failed, proceeding with Firebase sign-in attempt');
-      }
-
       const result = await signIn({ email: email.trim(), password });
 
       if (result.error) {
@@ -324,7 +315,7 @@ export default function SignInScreen() {
               title={t('auth.signIn')}
               onPress={handleSignIn}
               loading={isLoading}
-              disabled={isLoading || !authSystemReady}
+              disabled={isLoading}
               style={styles.signInButton}
             />
 

@@ -1,0 +1,75 @@
+﻿node.exe : Γÿà eas-cli@18.5.0 is now available.
+At line:1 char:1
++ & "C:\Program Files\nodejs/node.exe" "C:\Program Files\nodejs/node_mo ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (Γÿà eas-cli@18.5.0 is now availab 
+   le.:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+To upgrade, run:
+npm install -g eas-cli
+Proceeding with outdated version.
+
+
+Builds for @emmanuel4534/the-spot-app-v2:
+
+ID                       74a37bd0-b396-4b2b-90d6-a4709557b749
+Platform                 iOS
+Status                   finished
+Profile                  production
+Distribution             store
+Channel                  production
+SDK Version              53.0.0
+Runtime Version          2.1.0
+Version                  2.1.0
+Build number             44
+Commit                   9e4ba3a4bc877722032169d0f3ea9d8bfda5c0fb
+Logs                     https://expo.dev/accounts/emmanuel4534/projects/the-spot-app-v2/builds/74a37bd0-b396-4b2b-90d6-a4709557b749
+Application Archive URL  https://expo.dev/artifacts/eas/fpnNuwCCmbGVRWGdx5ZVtP.ipa
+Build Artifacts URL      null
+Fingerprint              4e854f977219566ecac7bc02e7d45a4cbd6d8262
+Started at               02/04/2026, 5:31:16 pm
+Finished at              02/04/2026, 7:59:16 pm
+Started by               emmanuel4534
+
+ΓÇöΓÇöΓÇö
+
+ID                       e869ee54-a3af-449d-8f57-ce174be42ed9
+Platform                 iOS
+Status                   finished
+Profile                  production
+Distribution             store
+Channel                  production
+SDK Version              53.0.0
+Runtime Version          2.1.0
+Version                  2.1.0
+Build number             41
+Commit                   946a0788d225478a58c01f2cc76f83b981cccd05
+Logs                     https://expo.dev/accounts/emmanuel4534/projects/the-spot-app-v2/builds/e869ee54-a3af-449d-8f57-ce174be42ed9
+Application Archive URL  https://expo.dev/artifacts/eas/uGyWiC4pjrFytwuNr73Fqv.ipa
+Build Artifacts URL      null
+Fingerprint              4e854f977219566ecac7bc02e7d45a4cbd6d8262
+Started at               02/04/2026, 4:29:03 am
+Finished at              02/04/2026, 5:34:06 am
+Started by               emmanuel4534
+
+ΓÇöΓÇöΓÇö
+
+ID                       a8284380-0d01-4137-8372-da6e38b5a066
+Platform                 iOS
+Status                   finished
+Profile                  production
+Distribution             store
+Channel                  production
+SDK Version              53.0.0
+Runtime Version          2.1.0
+Version                  2.1.0
+Build number             40
+Commit                   72dc1932456ad2aa30ad7be30f0cff835d2e8dce
+Logs                     https://expo.dev/accounts/emmanuel4534/projects/the-spot-app-v2/builds/a8284380-0d01-4137-8372-da6e38b5a066
+Application Archive URL  https://expo.dev/artifacts/eas/mLmHkbFvJjiNzTq9U61nTm.ipa
+Build Artifacts URL      null
+Fingerprint              e7e13c496b35064145a93217b5d66a3f5f69c5b9
+Started at               01/04/2026, 3:40:03 pm
+Finished at              01/04/2026, 8:02:04 pm
+Started by               emmanuel4534

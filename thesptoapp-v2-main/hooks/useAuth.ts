@@ -72,7 +72,7 @@ export function useAuth(): AuthState {
           console.error('[useAuth] onAuthStateChanged error:', error);
           void appendAuthDiagnostic('useAuth:state:error', {
             message: error?.message,
-            code: error?.code,
+            code: (error as any)?.code,
           });
           setUser(null);
           setIsLoading(false);

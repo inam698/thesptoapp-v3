@@ -1,21 +1,30 @@
 === 1. VERSION REJECTION DETAILS ===
-State: WAITING_FOR_REVIEW
-Included types: builds/23b7a10f-06b9-4155-a7b0-4fbe23e02d97, appStoreVersionSubmissions/193a42ea-6826-4118-a8d2-d6483702e08c
+State: REJECTED
+Included types: builds/710b527f-4ca9-4e9f-8f0c-9a62c9cb5ed9
 
 === 2. ALL REVIEW SUBMISSIONS ===
-  Sub: 6668e186-b93d-47c6-8db6-de6400ab53c5 | state: READY_FOR_REVIEW | submitted: null
-  Sub: 5e771efd-6585-45d8-8bd3-e070cf14fcfc | state: WAITING_FOR_REVIEW | submitted: 2026-03-25T22:59:50.131Z
-  Sub: 6937bae7-11ca-4bab-9e2a-4da19be11658 | state: COMPLETE | submitted: 2026-03-24T21:47:08.952Z
-  Sub: 2d551f76-ad11-4e93-b4f4-aa65c4c8797c | state: COMPLETE | submitted: 2026-03-13T21:56:41.986Z
-  Sub: 0ae4c5a9-bff6-49d9-852c-7d9f73ef45f7 | state: COMPLETE | submitted: 2026-02-17T07:25:58.507Z
-  Included: type=reviewSubmissionItems id=NWU3NzFlZmQtNjU4NS00NWQ4LThiZDMtZTA3MGNmMTRmY2ZjfDZ8ODgzMzU4MzY0 state=READY_FOR_REVIEW
-  Included: type=reviewSubmissionItems id=NjkzN2JhZTctMTFjYS00YmFiLTllMmEtNGRhMTliZTExNjU4fDZ8ODgzMzU4MzY0 state=REMOVED
-  Included: type=reviewSubmissionItems id=MmQ1NTFmNzYtYWQxMS00ZTkzLWI0ZjQtYWE2NWM0Yzg3OTdjfDZ8ODgzMzU4MzY0 state=REMOVED
-  Included: type=reviewSubmissionItems id=MGFlNGM1YTktYmZmNi00OWQ5LTg1MmMtN2Q5ZjczZWY0NWY3fDZ8ODc5NjgyNTgx state=APPROVED
+  Sub: 969494ba-79d3-4035-93ea-ecdd78cf9a4b | state: READY_FOR_REVIEW | submitted: null
+  Sub: 9be5dd72-bb1a-4f15-aa47-9d957e0367fb | state: UNRESOLVED_ISSUES | submitted: 2026-04-07T01:45:15.137Z
+  Sub: de791e4f-f005-467d-8b64-5466f8af48ae | state: COMPLETE | submitted: 2026-04-03T17:58:26.008Z
+  Sub: 27137b4d-bc74-4955-9644-e542e17a9d0c | state: COMPLETE | submitted: 2026-04-01T18:04:03.176Z
+  Sub: 30607655-eefc-47d7-acf0-d5969cd2a063 | state: COMPLETE | submitted: 2026-04-01T17:29:34.065Z
+  Sub: d23699b1-51dc-4803-a265-0f849350dea8 | state: COMPLETE | submitted: 2026-03-31T11:07:29.323Z
+  Sub: 78b301b8-0006-4b3c-915d-29ad7f01b216 | state: COMPLETE | submitted: 2026-03-31T08:57:00.285Z
+  Sub: 09fa561b-2597-49d4-99db-8f59316b3a36 | state: COMPLETE | submitted: 2026-03-29T18:17:06.712Z
+  Sub: 30252f0c-35fe-4be0-b2e0-0ecf534e0d90 | state: COMPLETE | submitted: 2026-03-29T17:29:14.977Z
+  Sub: 661dfef9-1cca-4db5-8b03-5ea22c7fd3e0 | state: COMPLETE | submitted: 2026-03-29T16:53:27.227Z
+  Included: type=reviewSubmissionItems id=OWJlNWRkNzItYmIxYS00ZjE1LWFhNDctOWQ5NTdlMDM2N2ZifDZ8ODgzMzU4MzY0 state=REJECTED
+  Included: type=reviewSubmissionItems id=ZGU3OTFlNGYtZjAwNS00NjdkLThiNjQtNTQ2NmY4YWY0OGFlfDZ8ODgzMzU4MzY0 state=REMOVED
+  Included: type=reviewSubmissionItems id=MjcxMzdiNGQtYmM3NC00OTU1LTk2NDQtZTU0MmUxN2E5ZDBjfDZ8ODgzMzU4MzY0 state=REMOVED
+  Included: type=reviewSubmissionItems id=MzA2MDc2NTUtZWVmYy00N2Q3LWFjZjAtZDU5NjljZDJhMDYzfDZ8ODgzMzU4MzY0 state=REMOVED
+  Included: type=reviewSubmissionItems id=ZDIzNjk5YjEtNTFkYy00ODAzLWEyNjUtMGY4NDkzNTBkZWE4fDZ8ODgzMzU4MzY0 state=REMOVED
+  Included: type=reviewSubmissionItems id=NzhiMzAxYjgtMDAwNi00YjNjLTkxNWQtMjlhZDdmMDFiMjE2fDZ8ODgzMzU4MzY0 state=REMOVED
+  Included: type=reviewSubmissionItems id=MDlmYTU2MWItMjU5Ny00OWQ0LTk5ZGItOGY1OTMxNmIzYTM2fDZ8ODgzMzU4MzY0 state=REMOVED
+  Included: type=reviewSubmissionItems id=MzAyNTJmMGMtMzVmZS00YmUwLWIyZTAtMGVjZjUzNGUwZDkwfDZ8ODgzMzU4MzY0 state=REMOVED
+  Included: type=reviewSubmissionItems id=NjYxZGZlZjktMWNjYS00ZGI1LThiMDMtNWVhMjJjN2ZkM2UwfDZ8ODgzMzU4MzY0 state=REMOVED
 
 === 3. REJECTION SUBMISSION DETAILS (2d551f76) ===
-State: COMPLETE
-  Item: MmQ1NTFmNzYtYWQxMS00ZTkzLWI0ZjQtYWE2NWM0Yzg3OTdjfDZ8ODgzMzU4MzY0 state=REMOVED
+State: undefined
 
 === 4. RESOLUTION CENTER / CUSTOMER REVIEWS ===
 Customer reviews status: 200
@@ -26,14 +35,28 @@ Email: feministspotapp@gmail.com
 Phone: +260 962302300
 Demo user: apple.review@thespotapp.com
 Demo password: ***set***
-Notes: The Spot App is a sexual and reproductive health education platform for young people. To test the full app:\n\n1. Sign in with the demo account credentials provided.\n2. Browse health articles (Home tab) and health tips.\n3. Use the Period Tracker to log menstrual cycles.\n4. View the Information section for SRHR resources.\n5. Bookmark articles and view reading history in your Profile.\n\nThe app requires an internet connection for initial content loading. All content is educational and provided by the Sistah Sistah Foundation, a registered NGO.
+Notes: Sign in with the demo credentials provided above.
+
+The Spot App is a sexual and reproductive health education platform for young women and girls in Africa, built by the Sistah Sistah Foundation.
+
+To test the app:
+1. Enter the demo email and password on the Sign In screen, then tap Sign In.
+2. Home tab: Browse 9 health categories and read articles.
+3. Period Tracker tab: Log a menstrual cycle.
+4. Journal tab: Write a private journal entry.
+5. Library tab: Bookmark an article and view your reading history.
+6. Profile tab: View account settings and preferences.
+
+Guest mode (no account required) is also available via the "Continue as Guest" button on the sign-in screen.
+
+An active internet connection is required for content loading.
 
 === 6. VERSION SUBMISSION OBJECT ===
 Status: 403
 Data: {
   "errors": [
     {
-      "id": "3ee9804b-2910-4d0c-a41a-87eb7193159e",
+      "id": "19f1b0da-01e4-4e41-bd1e-3e5d8904a73f",
       "status": "403",
       "code": "FORBIDDEN_ERROR",
       "title": "The given operation is not allowed",
@@ -43,18 +66,12 @@ Data: {
 }
 
 === 7. ORIGINAL REJECTION SUBMISSION (6937bae7) ===
-State: COMPLETE
-Full attrs: {
-  "submittedDate": "2026-03-24T21:47:08.952Z",
-  "platform": "IOS",
-  "state": "COMPLETE"
-}
-  Included: actors | API_KEY:X79F2H3QXT | {"apiKeyId":"X79F2H3QXT","actorType":"API_KEY","userEmail":null,"userFirstName":null,"userLastName":null}
-  Included: reviewSubmissionItems | NjkzN2JhZTctMTFjYS00YmFiLTllMmEtNGRhMTliZTExNjU4fDZ8ODgzMzU4MzY0 | {"state":"REMOVED"}
+State: undefined
+Full attrs: undefined
 
 === 8. APP INFO (REJECTION STATE) ===
   AppInfo: 76bb90d4-bef8-460a-b855-498ed2eea6b9 state=READY_FOR_SALE
-  AppInfo: d95836c2-b098-4f8e-a635-4a58bee49097 state=WAITING_FOR_REVIEW
+  AppInfo: d95836c2-b098-4f8e-a635-4a58bee49097 state=REJECTED
 
 === 9. REJECTED BUILD 20 DETAILS ===
 Build #: 20
