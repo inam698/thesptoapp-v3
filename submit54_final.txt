@@ -1,0 +1,28 @@
+﻿Build54 ASC ID: 45c3877b-d156-497b-b00d-a97a1d846ce7
+Attaching Build 54 to version 2.1.0...
+Attach: 200
+Submitting for review...
+Submit: 403
+[
+  {
+    "id": "507c5219-d8dc-432f-925a-46dfba701c5d",
+    "status": "403",
+    "code": "FORBIDDEN_ERROR",
+    "title": "The given operation is not allowed",
+    "detail": "The resource 'appStoreVersionSubmissions' does not allow 'CREATE'. Allowed operation is: DELETE"
+  }
+]
+Trying reviewSubmissions API...
+New API: 201
+Submission: e639d1bb-ed60-4bcb-a71f-555032ae6af2
+Item: 409
+Confirm: 409
+[
+  {
+    "id": "de13da01-d185-46c4-8c8e-51aed5782e1d",
+    "status": "409",
+    "code": "STATE_ERROR.ENTITY_STATE_INVALID",
+    "title": "Resource state invalid",
+    "detail": "reviewSubmissions with id e639d1bb-ed60-4bcb-a71f-555032ae6af2 does not have any items."
+  }
+]

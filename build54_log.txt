@@ -1,0 +1,12 @@
+﻿node.exe : Γÿà eas-cli@18.5.0 is now available.
+At line:1 char:1
++ & "C:\Program Files\nodejs/node.exe" "C:\Program Files\nodejs/node_mo ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (Γÿà eas-cli@18.5.0 is now availab 
+   le.:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+To upgrade, run:
+npm install -g eas-cli
+Proceeding with outdated version.
+

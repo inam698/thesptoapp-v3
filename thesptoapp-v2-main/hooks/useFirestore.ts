@@ -74,7 +74,15 @@ export function useFirestoreCollection(
         setLoading(false);
       },
       (err) => {
-        setError(err.message);
+        // Suppress permission-denied errors — show empty state instead of
+        // a visible error. This happens when using REST-fallback auth on
+        // iOS 26+ where the Firestore SDK doesn't have a valid auth token.
+        if (err.code === 'permission-denied' || err.message?.includes('permission')) {
+          console.warn('[useFirestore] Permission denied for', collectionPath, '— showing empty state');
+          setData([]);
+        } else {
+          setError(err.message);
+        }
         setLoading(false);
       }
     );

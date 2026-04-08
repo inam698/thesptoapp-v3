@@ -55,7 +55,9 @@ export function usePeriodTracker() {
       setCycles(snap.docs.map(d => ({ id: d.id, ...d.data() } as Cycle)));
       setCyclesLoading(false);
     }, err => {
-      setError(err.message);
+      if (err.code !== 'permission-denied' && !err.message?.includes('permission')) {
+        setError(err.message);
+      }
       setCyclesLoading(false);
     });
     return () => unsub();
@@ -76,7 +78,9 @@ export function usePeriodTracker() {
       setLogs(snap.docs.map(d => ({ id: d.id, ...d.data() } as DailyLog)));
       setLogsLoading(false);
     }, err => {
-      setError(err.message);
+      if (err.code !== 'permission-denied' && !err.message?.includes('permission')) {
+        setError(err.message);
+      }
       setLogsLoading(false);
     });
     return () => unsub();

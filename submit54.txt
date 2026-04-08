@@ -1,0 +1,26 @@
+
+ASC App ID:                 6755155637
+Project ID:                 7afa0315-0ed5-40d7-aa1d-90c8ea3bfc94
+App Store Connect API Key:  
+    Key ID    :  X79F2H3QXT
+    Key Source:  local
+    Key Path  :  ./AuthKey_X79F2H3QXT.p8
+Build:                      
+    Build ID    :  47c18430-9e64-4fbd-981e-b5e5170d669e
+    Build Date  :  08/04/2026, 11:49:42 am
+    App Version :  2.1.0
+    Build number:  54
+
+- Scheduling iOS submission
+✔ Scheduled iOS submission
+
+Submission details: https://expo.dev/accounts/emmanuel4534/projects/the-spot-app-v2/submissions/06777e9f-6752-4a62-8b34-ed03dc40f4ef
+
+Waiting for submission to complete. You can press Ctrl+C to exit.
+- Submitting
+✖ Something went wrong when submitting your app to Apple App Store Connect.
+★ eas-cli@18.5.0 is now available.
+To upgrade, run:
+npm install -g eas-cli
+Proceeding with outdated version.
+

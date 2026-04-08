@@ -1,0 +1,47 @@
+1. Listing all review submissions...
+   Found 10 submission(s):
+   - ID: 6326e5b7-fa3e-4adc-a06a-5dfd1a8b5f52, State: READY_FOR_REVIEW, Platform: IOS
+   - ID: e639d1bb-ed60-4bcb-a71f-555032ae6af2, State: READY_FOR_REVIEW, Platform: IOS
+   - ID: 8d7b4f5e-d905-42b7-b3cb-a5d00705f81d, State: READY_FOR_REVIEW, Platform: null
+   - ID: 52c30ec5-7414-43c4-a5cd-d6599a550c30, State: READY_FOR_REVIEW, Platform: null
+   - ID: 610016c7-73d4-4f28-9970-eac6c0a0981a, State: COMPLETE, Platform: IOS
+   - ID: a29de663-623a-448e-bf5f-9a31c63a5c25, State: COMPLETE, Platform: IOS
+   - ID: 9be5dd72-bb1a-4f15-aa47-9d957e0367fb, State: COMPLETE, Platform: IOS
+   - ID: de791e4f-f005-467d-8b64-5466f8af48ae, State: COMPLETE, Platform: IOS
+   - ID: 27137b4d-bc74-4955-9644-e542e17a9d0c, State: COMPLETE, Platform: IOS
+   - ID: 30607655-eefc-47d7-acf0-d5969cd2a063, State: COMPLETE, Platform: IOS
+
+2. Cleaning up old submissions...
+   Cancelling 6326e5b7-fa3e-4adc-a06a-5dfd1a8b5f52 (READY_FOR_REVIEW)...
+   PATCH result: 409
+   Detail: "Resource is not in cancellable state"
+   DELETE fallback: 403
+   Cancelling e639d1bb-ed60-4bcb-a71f-555032ae6af2 (READY_FOR_REVIEW)...
+   PATCH result: 409
+   Detail: "Resource is not in cancellable state"
+   DELETE fallback: 403
+   Cancelling 8d7b4f5e-d905-42b7-b3cb-a5d00705f81d (READY_FOR_REVIEW)...
+   PATCH result: 409
+   Detail: "Resource is not in cancellable state"
+   DELETE fallback: 403
+   Cancelling 52c30ec5-7414-43c4-a5cd-d6599a550c30 (READY_FOR_REVIEW)...
+   PATCH result: 409
+   Detail: "Resource is not in cancellable state"
+   DELETE fallback: 403
+   610016c7-73d4-4f28-9970-eac6c0a0981a is COMPLETE - skipping
+   a29de663-623a-448e-bf5f-9a31c63a5c25 is COMPLETE - skipping
+   9be5dd72-bb1a-4f15-aa47-9d957e0367fb is COMPLETE - skipping
+   de791e4f-f005-467d-8b64-5466f8af48ae is COMPLETE - skipping
+   27137b4d-bc74-4955-9644-e542e17a9d0c is COMPLETE - skipping
+   30607655-eefc-47d7-acf0-d5969cd2a063 is COMPLETE - skipping
+   Cleaned 4 submission(s)
+
+3. Waiting 3 seconds then creating new review submission...
+   Created review submission: 0538da90-41ba-4e61-bfb7-71c59b6640bb
+
+4. Adding version to submission...
+   Item added: 201
+
+5. Confirming and submitting review...
+
+   SUCCESS! App submitted for Apple review! State: WAITING_FOR_REVIEW

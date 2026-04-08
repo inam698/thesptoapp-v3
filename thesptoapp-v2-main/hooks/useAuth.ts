@@ -15,12 +15,17 @@ export interface AuthState {
 // the Firebase SDK is completely broken (iOS 26+) but REST API verified creds.
 let _injectUserFn: ((user: User) => void) | null = null;
 
+// Flag: set to true when a REST-fallback user has been injected.
+// Prevents onAuthStateChanged(null) from overwriting the injected user.
+let _hasInjectedUser = false;
+
 /**
  * Push an externally-authenticated user into the useAuth hook's state.
  * Called from signInWithRestFallback when all SDK sign-in paths fail
  * but the REST API has proven the credentials are valid.
  */
 export function injectAuthUser(user: User): void {
+  _hasInjectedUser = true;
   if (_injectUserFn) {
     _injectUserFn(user);
   }
@@ -35,6 +40,7 @@ export function useAuth(): AuthState {
     _injectUserFn = (injectedUser: User) => {
       console.log('[useAuth] Manually injected REST-fallback user, uid:', injectedUser.uid);
       void appendAuthDiagnostic('useAuth:inject:restFallbackUser', { uid: injectedUser.uid });
+      _hasInjectedUser = true;
       setUser(injectedUser);
       setIsLoading(false);
     };
@@ -44,6 +50,8 @@ export function useAuth(): AuthState {
     // Safety timeout: if onAuthStateChanged never fires (broken auth instance),
     // stop loading after 10 s so the app doesn't hang on a blank screen.
     const safetyTimer = setTimeout(() => {
+      // Don't clear loading if a REST-fallback user was already injected
+      if (_hasInjectedUser) return;
       setIsLoading((prev) => {
         if (prev) {
           console.warn('[useAuth] Auth state not received after 10 s — stopping loader');
@@ -65,7 +73,24 @@ export function useAuth(): AuthState {
           void appendAuthDiagnostic('useAuth:state:received', {
             hasUser: !!firebaseUser,
             uid: firebaseUser?.uid,
+            hasInjectedUser: _hasInjectedUser,
           });
+
+          // If a REST-fallback user was injected and onAuthStateChanged fires
+          // with null, do NOT overwrite — the user is legitimately authenticated
+          // via REST even though the SDK doesn't know about it.
+          if (!firebaseUser && _hasInjectedUser) {
+            console.log('[useAuth] onAuthStateChanged(null) ignored — REST-fallback user is active');
+            void appendAuthDiagnostic('useAuth:state:nullIgnored:injectedUserActive');
+            setIsLoading(false);
+            return;
+          }
+
+          // If SDK fires with a real user, clear the injected flag — SDK auth is working
+          if (firebaseUser) {
+            _hasInjectedUser = false;
+          }
+
           if (firebaseUser) {
             // Check if user has been deactivated by an admin
             try {
@@ -115,6 +140,7 @@ export function useAuth(): AuthState {
     return () => {
       clearTimeout(safetyTimer);
       _injectUserFn = null;
+      _hasInjectedUser = false;
       void appendAuthDiagnostic('useAuth:subscribe:cleanup');
       unsubscribe?.();
     };

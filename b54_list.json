@@ -1,0 +1,161 @@
+[
+  {
+    "id": "47c18430-9e64-4fbd-981e-b5e5170d669e",
+    "status": "FINISHED",
+    "platform": "IOS",
+    "artifacts": {
+      "buildUrl": "https://expo.dev/artifacts/eas/9RVueictp2gmSyCRcypYob.ipa",
+      "xcodeBuildLogsUrl": "https://job-logs.eascdn.net/production-xcode-logs/47c18430-9e64-4fbd-981e-b5e5170d669e?X-Goog-Algorithm=GOOG4-RSA-SHA256&X-Goog-Credential=www-production%40exponentjs.iam.gserviceaccount.com%2F20260408%2Fauto%2Fstorage%2Fgoog4_request&X-Goog-Date=20260408T134241Z&X-Goog-Expires=900&X-Goog-SignedHeaders=host&X-Goog-Signature=ab324bad55a4811c5f778ae61dd90a0448f85c6f14ebd9ca7c7a66fe8d3db642dfa7acfdcaf68ba4c6e14ba945c2ad4ba9bb6161e3169ff3e3dbc0c4705aac0db72f2e0bc1694cc35051f3bbbb3cc7a21de67fdfe772ec3ae3f1bfea79497b5f50a92e8c3f4bc74899e605c47f7a2b01fa3f96ffc8d9a5bbf79ed6582e62d2ec0bc57ec44bfefbe2236fd50c936557760e9a057140f91625ec7c738e009f6540f2099c40804dce15b540710512a3ea6e571e6d411f04b2d563ce982f5384218740a831484e628c80802e3d6647b623508fc2b36d8c67c1db0488ba1b556243938c7266614f64766200fa158dd85d3d56bfc795ec4febee4f69302575cff6aad3",
+      "applicationArchiveUrl": "https://expo.dev/artifacts/eas/9RVueictp2gmSyCRcypYob.ipa"
+    },
+    "fingerprint": {
+      "id": "019d5424-699c-7aa2-b3ee-9bedaafa3bfb",
+      "hash": "8a99381cf96f53282ca91e5b060c451786174a2f"
+    },
+    "initiatingActor": {
+      "id": "53552ed1-9821-4fdf-88c3-be130adb6c3a",
+      "displayName": "emmanuel4534"
+    },
+    "logFiles": [
+      "https://job-logs.eascdn.net/production/47c18430-9e64-4fbd-981e-b5e5170d669e/1775641782527-5373f300-b317-4a2e-8c3d-d65b86e9ec42.txt?X-Goog-Algorithm=GOOG4-RSA-SHA256&X-Goog-Credential=www-production%40exponentjs.iam.gserviceaccount.com%2F20260408%2Fauto%2Fstorage%2Fgoog4_request&X-Goog-Date=20260408T134241Z&X-Goog-Expires=900&X-Goog-SignedHeaders=host&X-Goog-Signature=bb14b88c119bc5855a1d8c54e84efd08291c0145c411c9af0d478a60cd7ed298b3ff960d83f5a10f06c6f2d409036a26a71c3bd0c09803ccbebb55c78970ae7b97e490b33a5511b7e58b9b1846f8d7feb4fb8c1ec8cb6a3c192b5155d8173cf6766dd43df8c7784c615e0fe61be8ad1855c8f5acbb6e6564189468513caddf7f8c0a5626e14b0bc54f3855587edafa81e72125403562c62dccd9e574948ea50e54046970a4b960558fd970477266d695c74672d6da70557d12b5811d5ae180b01964b57c8de59132a0870f7a68491059417723558c2e0b76c7a01d9370aa7493d21b781bea06e3467792512fd53d1cd86ca5d0eccbdda2116cc5f539f7987411",
+      "https://job-logs.eascdn.net/production/47c18430-9e64-4fbd-981e-b5e5170d669e/1775641875245-3b378bf4-9259-4898-94a3-595d20972a33.txt?X-Goog-Algorithm=GOOG4-RSA-SHA256&X-Goog-Credential=www-production%40exponentjs.iam.gserviceaccount.com%2F20260408%2Fauto%2Fstorage%2Fgoog4_request&X-Goog-Date=20260408T134241Z&X-Goog-Expires=900&X-Goog-SignedHeaders=host&X-Goog-Signature=0f9dd8e9b9f2e01cbb2aa7f8fd62f8d8d4f3a2d75e935077680777a574b740115bdc31150b46b87d2a1acd74eb4b5e76f980afbb09444cb63d6dee57debd0a0f1a15673ac35e6926af578c9f52a79b108269ac86df7246388bec5477205a9dc504b54c7b1a859bb8f61ce334c402a537b39e28bb4ab8d3f387c987af6479b6c7e75c7550268dc83cc820e7f73cad853d130e9d4ee0472aaa3f9890b1061d21374ed799cc4ed5d4b24e0bd84e7a6612596034d26121c6a84659e4c9a5845bfd8f6c45acdb5a8218bc0cf9ee3ad10358aeef0d628f039246a1b244659df117eb7b1281ba3a93b386df329095292f6a3401d19e879246c9db1b726695481af039fc",
+      "https://job-logs.eascdn.net/production/47c18430-9e64-4fbd-981e-b5e5170d669e/1775641875516-91ae521c-d440-4595-9b08-4ce791d40741.txt?X-Goog-Algorithm=GOOG4-RSA-SHA256&X-Goog-Credential=www-production%40exponentjs.iam.gserviceaccount.com%2F20260408%2Fauto%2Fstorage%2Fgoog4_request&X-Goog-Date=20260408T134241Z&X-Goog-Expires=900&X-Goog-SignedHeaders=host&X-Goog-Signature=a5a1de5c574c7867cc5e5fbc4355c3b93ed8b423bc6ad4c71cb817a178e93bc9828897de9d202b0adc22dcbc41c1d758b121d608c0d975fed4a3a665e4dd3e59162ffd00b03af1a716e9edacadacb63372fec6f3c44cc619d3ad532753813eed335eb19493622307ffd3b7f931f594ce0b797c5ac7c559e143c4fca1730382c4441f9b626553c03a8b42ee2de3e23f02cddfba9bd5b6a33db896b2c40bbe40aae1b7545637734661824233fb959ea340a79948c96d342ce42180b8109d5bea019d87bb72706055772d4cb3ec812aab5bfc02ec0b0adc368a8906a74861d97946c717060414285e9a7283d3cff587060d8360d46c1dfd77a4c27a2ff92829fbb8",
+      "https://job-logs.eascdn.net/production/47c18430-9e64-4fbd-981e-b5e5170d669e/1775641875762-ce36ce49-4760-435c-a7e5-f627d314e142.txt?X-Goog-Algorithm=GOOG4-RSA-SHA256&X-Goog-Credential=www-production%40exponentjs.iam.gserviceaccount.com%2F20260408%2Fauto%2Fstorage%2Fgoog4_request&X-Goog-Date=20260408T134241Z&X-Goog-Expires=900&X-Goog-SignedHeaders=host&X-Goog-Signature=0c0ca12f4407957422d494eb37d4304a0cc8ff12e5c252a7f08da49c8342e3516763b2f57c0a63693a22052fc9b78fd089ad031d3706e440d9a38b2b61a582dc4a0849a6ac6bb87bdc14d4d61b809832c14366b95e88470f958d75433dc85e573951d505794d516fb29f8122e0c15272c1cfbcdc7cf004d716ed81a2235ba53942e0b40b4e7dffb514680763d687e1c432abcfdabb01223a39d8d5ce3d8edbbf52f7a5a6e41c7777919aa5f08be074a58b122a3127660d6fe7cf2bcdc9db4b0c4ca69e8c9893dcc1531b18c6666e128d1874176f4e7b15c2ba469790e8ed6325ff6f04dfcdc405888ff1ffac168107159bdf95e500d77ad7120e426a92dd49b4"
+    ],
+    "project": {
+      "id": "7afa0315-0ed5-40d7-aa1d-90c8ea3bfc94",
+      "name": "THE SPOT APP V2",
+      "slug": "the-spot-app-v2",
+      "ownerAccount": {
+        "id": "8e52cc17-f754-494f-8ef8-6fae759a44cb",
+        "name": "emmanuel4534"
+      }
+    },
+    "channel": "production",
+    "distribution": "STORE",
+    "buildProfile": "production",
+    "sdkVersion": "53.0.0",
+    "appVersion": "2.1.0",
+    "appBuildVersion": "54",
+    "runtimeVersion": "2.1.0",
+    "gitCommitHash": "1efac3bd61794d1fc38e727456955060781a90c5",
+    "gitCommitMessage": "Auth fix v3: signInWithCredential fallback + synthetic user when SDK broken on iOS 26\n\n- Rewrite signInWithRestFallback with 4-tier strategy:\n  A) signInWithCredential (different SDK code path)\n  B) One last signInWithEmailAndPassword retry\n  C) Check auth.currentUser (sometimes set despite errors)\n  D) Synthetic user from REST-verified data (never show error)\n- Add injectAuthUser bridge in useAuth to accept REST-fallback user\n- Store REST auth data in AsyncStorage for session persistence\n- Root cause: Firebase SDK fails on iOS 26.4 but REST API works;\n  old code returned error message which is what Apple sees",
+    "priority": "NORMAL",
+    "createdAt": "2026-04-08T09:49:42.232Z",
+    "updatedAt": "2026-04-08T09:58:20.294Z",
+    "completedAt": "2026-04-08T09:58:15.751Z",
+    "expirationDate": "2026-05-08T09:49:42.289Z",
+    "isForIosSimulator": false,
+    "metrics": {
+      "buildWaitTime": 175,
+      "buildQueueTime": 138695,
+      "buildDuration": 370448
+    }
+  },
+  {
+    "id": "f8014170-da2c-4a54-8711-256fab0e85eb",
+    "status": "FINISHED",
+    "platform": "IOS",
+    "artifacts": {
+      "buildUrl": "https://expo.dev/artifacts/eas/wCev3oEhn2tHAYdgW9HtvD.ipa",
+      "xcodeBuildLogsUrl": "https://job-logs.eascdn.net/production-xcode-logs/f8014170-da2c-4a54-8711-256fab0e85eb?X-Goog-Algorithm=GOOG4-RSA-SHA256&X-Goog-Credential=www-production%40exponentjs.iam.gserviceaccount.com%2F20260408%2Fauto%2Fstorage%2Fgoog4_request&X-Goog-Date=20260408T134241Z&X-Goog-Expires=900&X-Goog-SignedHeaders=host&X-Goog-Signature=4c74344c90aca3868df7f0cac29a77abe8aa5d6366da2eccd6a5bdcc6ca58a827666cb89228d6af85ed04acfc0d13fb84029700edc25237d274e37a2d18806431f12988a8e79ae5daf9359aa431583660012b99580c587a90ecf268f988d14732f43130278819b93cbea4801f480bd769947797b2fbe68b59000296cae1c9603cf95f07b89d1e729bb74cbaa95b6a03a8aff1a21f2e76ca9a2e01b14cb08a3b7786499bc35b0dae606c1c09be234c81a4367615ba34483d220a6b24f9d80954c3700c5084045162b958206aad1b222390ed9dc3c946166766cae7f622df8b90b52e92c269b2e8abfdc76297cae7277ccaa206240342f379aff7ee17b93b119ac",
+      "applicationArchiveUrl": "https://expo.dev/artifacts/eas/wCev3oEhn2tHAYdgW9HtvD.ipa"
+    },
+    "fingerprint": {
+      "id": "019d5424-699c-7aa2-b3ee-9bedaafa3bfb",
+      "hash": "8a99381cf96f53282ca91e5b060c451786174a2f"
+    },
+    "initiatingActor": {
+      "id": "53552ed1-9821-4fdf-88c3-be130adb6c3a",
+      "displayName": "emmanuel4534"
+    },
+    "logFiles": [
+      "https://job-logs.eascdn.net/production/f8014170-da2c-4a54-8711-256fab0e85eb/1775628056687-47ad0ad8-3d07-4eb4-baac-f761175271e8.txt?X-Goog-Algorithm=GOOG4-RSA-SHA256&X-Goog-Credential=www-production%40exponentjs.iam.gserviceaccount.com%2F20260408%2Fauto%2Fstorage%2Fgoog4_request&X-Goog-Date=20260408T134241Z&X-Goog-Expires=900&X-Goog-SignedHeaders=host&X-Goog-Signature=87cbee182ee3b059fecee21bde606314415ab55317a67a62ca5b95f8ba10304460b948b91bf544ac341a2a6e40674fc3dfa6003c1a48530e1977940977cfc59bf6fccbf814c6937b0638ba498b42b3cdf66e6eef17f01feacf6527879482ed1f0aa2e2bb370435550d92303e76ba42b69c1fb4a37ac889ae6211a123bc3d83de20eeae867085e33f7c26ef8feb55058547c5b152e7ec82a1f3ab5c289da36076bbc8c875d876dc8dcca9ba10f6477353bf919c98f7ccd694b1badc27e0d1b0e07d29280596839a62f0f1927b0acad504c138a7db7bca392783c1410cd089da8348e21f9c1c47ebdd39d1068035a426ea1bc6de8e1f37a6ca706351cc7f44b3ac",
+      "https://job-logs.eascdn.net/production/f8014170-da2c-4a54-8711-256fab0e85eb/1775628061456-dcf36d40-691b-4e93-a3c3-8a835b527166.txt?X-Goog-Algorithm=GOOG4-RSA-SHA256&X-Goog-Credential=www-production%40exponentjs.iam.gserviceaccount.com%2F20260408%2Fauto%2Fstorage%2Fgoog4_request&X-Goog-Date=20260408T134241Z&X-Goog-Expires=900&X-Goog-SignedHeaders=host&X-Goog-Signature=9081ab25639ca3e292d14df623058d27705ac35474da37628d714c5074ebb4d104bcb02301f910f80503552ed94a4e6a473bf26f432244d2946d716b25c9a001ec5a3d144b438af7359c3540ef6c1126b04a22ebbd04f93d22f6d57e3658f7dcf181cd7c1bcca0ed4fdf4b2ec9a0aa1ba77d332b257a1d7a05e94746161fd9c7e381206b8a438deec1b0177f6eb763c2bb47ca475e6aec2780cb45bb71b50339568ba4b80c24c07b8a8b7bc22c42e78ef4d6f0bad66d778daef49985fbe2a949b2fc22c4817d72fc376481602248f9396d3ac74648971e91bcf47355cb11210a891bd81481a8019fcc9adcab954264135bdaf4fc0b363a9d5ac0124b0ba7ce09",
+      "https://job-logs.eascdn.net/production/f8014170-da2c-4a54-8711-256fab0e85eb/1775628061736-95f6775e-8171-4dbf-9a7c-c23f435711e9.txt?X-Goog-Algorithm=GOOG4-RSA-SHA256&X-Goog-Credential=www-production%40exponentjs.iam.gserviceaccount.com%2F20260408%2Fauto%2Fstorage%2Fgoog4_request&X-Goog-Date=20260408T134241Z&X-Goog-Expires=900&X-Goog-SignedHeaders=host&X-Goog-Signature=ad454ffe0c5be2b347b0dedae47d1076d066ada8ce7d1a15a8d1c8eed1885515a20f9a1de03ca828b67caa6d8ad7db4fe7670e0690ad8c498a6df087f7b375ad05980bdf472fdde10a369c71aec0945239ce673d6c8477d3577e55b3e9863911255cc69746d1c0fa11fd41768c2e63212703483fc5c5fc82316ff6d9fd7069eae7724d6feda5a82b2088e2bf69cf64b5947e58032c90fb6d3f8bb8f9465fac9c93d5844056170bd348f1583bb95f55c4790cadaaabd3e1c23eb22ce9854d35e76ce9c05b7115f279ab5ed2d02d3639db0458a93902dd461667e7bbe19c29229ae938dcf15d382641781e09d597b293eee9663f681a17c7cbed2a1db9f77915e1",
+      "https://job-logs.eascdn.net/production/f8014170-da2c-4a54-8711-256fab0e85eb/1775628061968-368b9dfe-9bf4-4796-8eea-e84927f0b4ad.txt?X-Goog-Algorithm=GOOG4-RSA-SHA256&X-Goog-Credential=www-production%40exponentjs.iam.gserviceaccount.com%2F20260408%2Fauto%2Fstorage%2Fgoog4_request&X-Goog-Date=20260408T134241Z&X-Goog-Expires=900&X-Goog-SignedHeaders=host&X-Goog-Signature=2b10bc41aa618a504ec13a7b77ea600fe949795fea1ee96715e92eb0b235c6ddb551f123a683d74d13184e20265393b2d6a554edd94a9858ebd3f54a979c3ba760e317572c157451aa4ea622899f8f0634a3b73567a74091a62f2c0e4c353a74dde2d1618820767779771d99d7dca94a3ae4caffb441edeba9ce18d1f9c81b1f3ddb3cfd9bc8754fa03bdabbb66607bb287de646a43bb211493f3085525cfd041b6a303c46e9106b826050efe3944131f1abe1ecfe157eaf5daad16f75b4428652861275de052c9e2f7f02099ca9a5a31cbd5e02e22ac58d9e1053b0af7395e0713a5d2b2d59ada66177e26ed2efd29d07b355e85e18d3d35b1b6a55107a035a"
+    ],
+    "project": {
+      "id": "7afa0315-0ed5-40d7-aa1d-90c8ea3bfc94",
+      "name": "THE SPOT APP V2",
+      "slug": "the-spot-app-v2",
+      "ownerAccount": {
+        "id": "8e52cc17-f754-494f-8ef8-6fae759a44cb",
+        "name": "emmanuel4534"
+      }
+    },
+    "channel": "production",
+    "distribution": "STORE",
+    "buildProfile": "production",
+    "sdkVersion": "53.0.0",
+    "appVersion": "2.1.0",
+    "appBuildVersion": "53",
+    "runtimeVersion": "2.1.0",
+    "gitCommitHash": "b5561d0db96882b9d9b8c344104859081b1e4a40",
+    "gitCommitMessage": "Auth fix v2: REST API fallback, remove authReady gate, fix TS errors",
+    "priority": "NORMAL",
+    "createdAt": "2026-04-08T06:00:56.485Z",
+    "updatedAt": "2026-04-08T06:08:01.441Z",
+    "completedAt": "2026-04-08T06:07:56.086Z",
+    "expirationDate": "2026-05-08T06:00:56.516Z",
+    "isForIosSimulator": false,
+    "metrics": {
+      "buildWaitTime": 103,
+      "buildQueueTime": 49490,
+      "buildDuration": 365823
+    }
+  },
+  {
+    "id": "ffb4e94d-45b1-4953-8464-fba2545282c2",
+    "status": "FINISHED",
+    "platform": "IOS",
+    "artifacts": {
+      "buildUrl": "https://expo.dev/artifacts/eas/xzoQ3xtT4LRjxLLEmFggKy.ipa",
+      "xcodeBuildLogsUrl": "https://job-logs.eascdn.net/production-xcode-logs/ffb4e94d-45b1-4953-8464-fba2545282c2?X-Goog-Algorithm=GOOG4-RSA-SHA256&X-Goog-Credential=www-production%40exponentjs.iam.gserviceaccount.com%2F20260408%2Fauto%2Fstorage%2Fgoog4_request&X-Goog-Date=20260408T134241Z&X-Goog-Expires=900&X-Goog-SignedHeaders=host&X-Goog-Signature=269add357d9f7b19c438b9f2115c5cf3c18e1f32ce474cfdf17dd599cc86578312c5bbed15200196e47011e2dc7dbe2cae62ef59ff387174eb6effdc0cd25a0b16b9aae1ad4d6fa624ec864e3496a4f0f28bd8b5a5217a87d0ef1269e13ca7805fb7f9bcc7c0f9c49216b2fb7ed9b42b0095e93e44823702a6e7bbbd8ef7a6b06cb1e5223f076c32ef7fc57047ab9f7db39d956ba6dcca491b29052dd3a186406d0acce43d0963aadf95afba719dc2f43f5b7a4f62f7d245e0fe2b7ae2420623bb853170c6c64d88a7a9008be56a05a08487a5d787942577752a2d8e2a7b97f3324429a890332c52f4aba4c90f6ee95b62687ce7170ba041a551964eb09161ba",
+      "applicationArchiveUrl": "https://expo.dev/artifacts/eas/xzoQ3xtT4LRjxLLEmFggKy.ipa"
+    },
+    "fingerprint": {
+      "id": "019d5424-699c-7aa2-b3ee-9bedaafa3bfb",
+      "hash": "8a99381cf96f53282ca91e5b060c451786174a2f"
+    },
+    "initiatingActor": {
+      "id": "53552ed1-9821-4fdf-88c3-be130adb6c3a",
+      "displayName": "emmanuel4534"
+    },
+    "logFiles": [
+      "https://job-logs.eascdn.net/production/ffb4e94d-45b1-4953-8464-fba2545282c2/1775544446005-f8c3885a-ffe5-48e6-9615-a594983fd013.txt?X-Goog-Algorithm=GOOG4-RSA-SHA256&X-Goog-Credential=www-production%40exponentjs.iam.gserviceaccount.com%2F20260408%2Fauto%2Fstorage%2Fgoog4_request&X-Goog-Date=20260408T134241Z&X-Goog-Expires=900&X-Goog-SignedHeaders=host&X-Goog-Signature=679706cecb31cc4fcbfce17ba6053a4b30c60353795fd64357070d017a2dda9627240b60d85635a4fcd67bd47f126a2f1e3b1484b5381b6d5b085d671cadee6178a5ae0743b884bf317d4867e00ff953d67f035f8e530c918d6e39a325bc35e7651be2b14e6c0e0f096d9eae9ab51c6348b136cab111375503ef469ca63ed7be5cf8b3c6ee5aa661f1aac8e7386c49a603e0e025302ce5360b764c7d1af2b4ef11b0fa1fece99a04dbbf8df9d05bed311f235a8bb3107432a188b937e72f07e25bdf3b40fce98788acee6817a92ebdd4728350f42ce1408218b3262bfd1a74f16201f7b51f97006bd8293727b81666dc1b02fdb4f08aa0c71f0cf68024d31475",
+      "https://job-logs.eascdn.net/production/ffb4e94d-45b1-4953-8464-fba2545282c2/1775544449297-7f25a0a1-1b9a-4134-b0c6-df26489b1b35.txt?X-Goog-Algorithm=GOOG4-RSA-SHA256&X-Goog-Credential=www-production%40exponentjs.iam.gserviceaccount.com%2F20260408%2Fauto%2Fstorage%2Fgoog4_request&X-Goog-Date=20260408T134241Z&X-Goog-Expires=900&X-Goog-SignedHeaders=host&X-Goog-Signature=2075a664a62c6462a3775c763db2fabd9811d22729e8608f6e22e26b58b7257a72cbabb9a12f6bc65ef65bba4dac61d99bfb5c1284fb62d721fa54bf2215ffb8dc4048da191bf3948d531faa0ef6148583d67065751d516f075e8d77167c41de5ee048ac768fa1c1506bc7f9c0aabd59b122956cf9c241e98bf135d29a1a3c10a3a235b9df5bbe2574a5af8e954e441499360f4f3c001faf29acfe56b6f70883f17829627717ebf81c7df649f4157fbf4c598589e9d00b06efd25ae402a7647b3b554bb9c858b359a14aa478dd933390d1eecb9f646e66ec27578e81b06cb99675e260730c60c223865976d934ec7702991120ccdcdc67538a7dc3c67f898156",
+      "https://job-logs.eascdn.net/production/ffb4e94d-45b1-4953-8464-fba2545282c2/1775544449570-aa18d185-a768-4016-bd21-d7a49be2bdbc.txt?X-Goog-Algorithm=GOOG4-RSA-SHA256&X-Goog-Credential=www-production%40exponentjs.iam.gserviceaccount.com%2F20260408%2Fauto%2Fstorage%2Fgoog4_request&X-Goog-Date=20260408T134241Z&X-Goog-Expires=900&X-Goog-SignedHeaders=host&X-Goog-Signature=21ba4c47539ac984b9fb3fd7a389771db25419468eb5f1c512d7395471f6d29a5909cc8996e9c70f4bb10a4b233be57ce302db8c5991c1f2226dbdcdc00e85bc59ee2b54153fe1fddef938f687b28cf52dac8e35d507402789b7bac3d6f9885abea89b4c480afa7d0b919b234ea357e9d3107a067778692b8bc91892f5b03efbbb75481474b43acb2d5bc8f15158253290f8a120e6d2fefa45fa146252507edeec76288c41a7cbd4c8d2339165f1d10b72caf14b384dd35e840e54af06766d8ca20c959b66a3b992d382e3c1557a3e15fd5e3a0df6a979cb46f57cf84021c02997643f572a13579b11bd1bcf61d073e6946de28673f9e25dd8331dcd71f5ceca",
+      "https://job-logs.eascdn.net/production/ffb4e94d-45b1-4953-8464-fba2545282c2/1775544449768-b1061748-3e8d-4f6e-b696-d3691d7990b4.txt?X-Goog-Algorithm=GOOG4-RSA-SHA256&X-Goog-Credential=www-production%40exponentjs.iam.gserviceaccount.com%2F20260408%2Fauto%2Fstorage%2Fgoog4_request&X-Goog-Date=20260408T134241Z&X-Goog-Expires=900&X-Goog-SignedHeaders=host&X-Goog-Signature=abc1bf964395d84222aa71f3ce3270a40dec191a63f039d0e916f4475beab13e90356bcd6d40137dc8660f4c70a4f37a8e466d5f94c7c13b3765a42420d96cb05e8fd43f1e19361f5f6e04c2ed8b88185188f5a1f51028869d81f9982a3cb599bd4113547b43d7882a1490070fcfe21eb628fffa0da19294c78eeda06e50b080c015f812b85a9e2ad4b4426f2459c83091adb89f516b95f7eeea6c9f9c37af881ce4d0e877a824f41f7e0cebba09a3e1f8537c4e533f876853e2401b4c406b9be1c47b53cc65b2f22b9986b9280257de4977d94a846d43e326aaec5b7f121b532b29cf3f5d41414f74bcbda7b188a9055333239027da2bb49999a8b64535d0c6"
+    ],
+    "project": {
+      "id": "7afa0315-0ed5-40d7-aa1d-90c8ea3bfc94",
+      "name": "THE SPOT APP V2",
+      "slug": "the-spot-app-v2",
+      "ownerAccount": {
+        "id": "8e52cc17-f754-494f-8ef8-6fae759a44cb",
+        "name": "emmanuel4534"
+      }
+    },
+    "channel": "production",
+    "distribution": "STORE",
+    "buildProfile": "production",
+    "sdkVersion": "53.0.0",
+    "appVersion": "2.1.0",
+    "appBuildVersion": "52",
+    "runtimeVersion": "2.1.0",
+    "gitCommitHash": "bc413026dec143ac27cd47f303abb3764c06c2f9",
+    "gitCommitMessage": "Auth hardening: readiness gating, diagnostics pipeline, credential centralization, iPad input fixes, guest fallback",
+    "priority": "NORMAL",
+    "createdAt": "2026-04-07T06:47:25.731Z",
+    "updatedAt": "2026-04-07T06:54:28.212Z",
+    "completedAt": "2026-04-07T06:54:22.426Z",
+    "expirationDate": "2026-05-07T06:47:25.791Z",
+    "isForIosSimulator": false,
+    "metrics": {
+      "buildWaitTime": 154,
+      "buildQueueTime": 42704,
+      "buildDuration": 369675
+    }
+  }
+]
