@@ -32,11 +32,11 @@ export function useFirestoreCollection(
   useEffect(() => {
     setLoading(true);
 
-    // If no collection path is provided, return empty data
-    if (!collectionPath || collectionPath.trim() === "") {
+    // If no collection path is provided or Firestore is unavailable, return empty data
+    if (!collectionPath || collectionPath.trim() === "" || !db) {
       setData([]);
       setLoading(false);
-      setError(null);
+      setError(!db ? 'Firestore is unavailable' : null);
       return;
     }
 
@@ -91,8 +91,8 @@ export function useFirestoreCollection(
 
   // Add entry
   const addEntry = async (entry: Omit<FirestoreEntry, "id" | "timestamp">) => {
-    if (!collectionPath || collectionPath.trim() === "") {
-      const message = "No collection path provided";
+    if (!db || !collectionPath || collectionPath.trim() === "") {
+      const message = !db ? "Firestore is unavailable" : "No collection path provided";
       setError(message);
       throw new Error(message);
     }
@@ -110,8 +110,8 @@ export function useFirestoreCollection(
 
   // Update entry
   const updateEntry = async (id: string, updates: Partial<FirestoreEntry>) => {
-    if (!collectionPath || collectionPath.trim() === "") {
-      const message = "No collection path provided";
+    if (!db || !collectionPath || collectionPath.trim() === "") {
+      const message = !db ? "Firestore is unavailable" : "No collection path provided";
       setError(message);
       throw new Error(message);
     }
@@ -126,8 +126,8 @@ export function useFirestoreCollection(
 
   // Delete entry
   const deleteEntry = async (id: string) => {
-    if (!collectionPath || collectionPath.trim() === "") {
-      const message = "No collection path provided";
+    if (!db || !collectionPath || collectionPath.trim() === "") {
+      const message = !db ? "Firestore is unavailable" : "No collection path provided";
       setError(message);
       throw new Error(message);
     }

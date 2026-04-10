@@ -1,10 +1,10 @@
 import { DarkTheme, DefaultTheme, ThemeProvider } from '@react-navigation/native';
 import { useFonts } from 'expo-font';
-import { Stack, useRouter, useSegments } from 'expo-router';
+import { Stack, useRouter, useSegments, useRootNavigationState } from 'expo-router';
 import * as Linking from 'expo-linking';
 import { StatusBar } from 'expo-status-bar';
-import { useEffect, useRef, useState } from 'react';
-import { ActivityIndicator, LogBox, View } from 'react-native';
+import { useCallback, useEffect, useRef, useState } from 'react';
+import { ActivityIndicator, LogBox, StyleSheet, View } from 'react-native';
 import 'react-native-reanimated';
 
 import AnimatedSplash from '@/components/AnimatedSplash';
@@ -38,19 +38,6 @@ LogBox.ignoreLogs([
   'Require cycle:',
 ]);
 
-function LoadingScreen() {
-  return (
-    <View style={{ 
-      flex: 1, 
-      justifyContent: 'center', 
-      alignItems: 'center', 
-      backgroundColor: SpotColors.primary 
-    }}>
-      <ActivityIndicator size="large" color={SpotColors.textOnPrimary} />
-    </View>
-  );
-}
-
 interface AppInitData {
   attempt: number;
   checkedAt: string;
@@ -67,10 +54,11 @@ function getAppInitErrorMessage(error: unknown): string {
 
 export default function RootLayout() {
   const colorScheme = useColorScheme();
-  const { isAppReady, shouldShowOnboarding, shouldShowAuth, user, authError, retryAuthCheck } = useAppState();
+  const { isAppReady, shouldShowOnboarding, shouldShowAuth, user, authError, retryAuthCheck, setGuestMode } = useAppState();
   usePushNotifications(user?.uid ?? null);
   const router = useRouter();
   const segments = useSegments();
+  const rootNavigationState = useRootNavigationState();
   const [showSplash, setShowSplash] = useState(true);
   const [initLoading, setInitLoading] = useState(true);
   const [initError, setInitError] = useState<string | null>(null);
@@ -93,11 +81,17 @@ export default function RootLayout() {
     if (!loaded || !isAppReady) {
       const waitTimer = setTimeout(() => {
         if (canceled) return;
-        const timeoutMessage = 'App initialization timed out after 8 seconds. Please retry.';
-        console.error('[Init] Core app readiness timeout');
-        setInitError(timeoutMessage);
+        // Timeout is no longer fatal — proceed with whatever state we have.
+        // This prevents the app from being permanently stuck on a loading screen.
+        console.warn('[Init] Core app readiness timeout — proceeding anyway');
+        setInitData({
+          attempt: attemptNumber,
+          checkedAt: new Date().toISOString(),
+          startupApiChecked: false,
+          startupApiStatus: null,
+        });
         setInitLoading(false);
-      }, 8000);
+      }, 12000);
 
       return () => {
         canceled = true;
@@ -127,10 +121,11 @@ export default function RootLayout() {
           startupApiStatus = response.status;
 
           if (!response.ok) {
-            throw new Error(`Startup API failed with status ${response.status}`);
+            // Non-fatal — log but proceed with app launch
+            console.warn(`[Init] Startup API returned status ${response.status} — continuing anyway`);
+          } else {
+            console.log('[Init] Startup API check succeeded:', response.status);
           }
-
-          console.log('[Init] Startup API check succeeded:', response.status);
         } else {
           console.log('[Init] EXPO_PUBLIC_INIT_API_URL is not configured. Skipping startup API check.');
         }
@@ -147,9 +142,14 @@ export default function RootLayout() {
         console.log('[Init] Startup initialization complete');
       } catch (error) {
         if (canceled) return;
-        const message = getAppInitErrorMessage(error);
-        console.error('[Init] Startup initialization failed:', error);
-        setInitError(message);
+        // Startup API failure is non-fatal — log and proceed
+        console.warn('[Init] Startup check failed (non-fatal):', error);
+        setInitData({
+          attempt: attemptNumber,
+          checkedAt: new Date().toISOString(),
+          startupApiChecked: false,
+          startupApiStatus: null,
+        });
         setInitLoading(false);
       }
     };
@@ -171,18 +171,42 @@ export default function RootLayout() {
     retryAuthCheck();
   };
 
+  const handleSkipToGuest = useCallback(async () => {
+    try {
+      console.log('[Init] User skipping to guest mode');
+      await setGuestMode(true);
+      // Clear any blocking error state
+      setInitError(null);
+      if (!initData) {
+        setInitData({
+          attempt: initAttempt + 1,
+          checkedAt: new Date().toISOString(),
+          startupApiChecked: false,
+          startupApiStatus: null,
+        });
+      }
+      setInitLoading(false);
+    } catch (e) {
+      console.warn('[Init] Failed to set guest mode:', e);
+      // Force through anyway
+      setInitError(null);
+      setInitLoading(false);
+    }
+  }, [setGuestMode, initData, initAttempt]);
+
+  // Determine if the app is fully ready for user interaction
+  const appFullyReady = !initLoading && !initError && !!initData && !authError && !showSplash;
+
   // Check for OTA updates only after the user is past auth/onboarding.
-  // Running this on the sign-in screen causes the "Update Available" Alert to
-  // appear over the form, which blocks credential entry during App Review.
   const updateChecked = useRef(false);
   useEffect(() => {
-    if (!isAppReady || showSplash || shouldShowAuth || shouldShowOnboarding) return;
+    if (!appFullyReady || shouldShowAuth || shouldShowOnboarding) return;
     if (updateChecked.current) return;
     updateChecked.current = true;
     checkForUpdates().catch((e) =>
       console.warn('[Layout] checkForUpdates failed:', e)
     );
-  }, [isAppReady, showSplash, shouldShowAuth, shouldShowOnboarding]);
+  }, [appFullyReady, shouldShowAuth, shouldShowOnboarding]);
 
   // Handle deep links (thespotapp://article/{id})
   useEffect(() => {
@@ -209,57 +233,97 @@ export default function RootLayout() {
     return () => subscription.remove();
   }, [router]);
 
+  // Navigate to the correct route once the app is ready
   useEffect(() => {
-    if (!loaded || !isAppReady || showSplash) return;
+    if (!appFullyReady) return;
+
+    // Wait until the root navigator is fully mounted and has a valid state.
+    // Without this guard, router.replace() can throw
+    // "Attempted to navigate before mounting the Root Layout component"
+    // which crashes the app (especially on iPad / iPadOS 26).
+    if (!rootNavigationState?.key) return;
 
     const inAuthGroup = segments[0] === '(auth)';
     const inOnboarding = segments[0] === 'onboarding';
 
-    if (shouldShowOnboarding && !inOnboarding) {
-      router.replace('/onboarding');
-    } else if (shouldShowAuth && !inAuthGroup) {
-      router.replace('/(auth)/sign-in');
-    } else if (!shouldShowOnboarding && !shouldShowAuth && (inAuthGroup || inOnboarding)) {
-      router.replace('/(tabs)');
+    try {
+      if (shouldShowOnboarding && !inOnboarding) {
+        router.replace('/onboarding');
+      } else if (shouldShowAuth && !inAuthGroup) {
+        router.replace('/(auth)/sign-in');
+      } else if (!shouldShowOnboarding && !shouldShowAuth && (inAuthGroup || inOnboarding)) {
+        router.replace('/(tabs)');
+      }
+    } catch (e) {
+      console.warn('[Layout] Navigation error (will retry on next state change):', e);
     }
-    // Only react to actual auth/onboarding state changes, not intra-group navigation
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [loaded, isAppReady, showSplash, shouldShowOnboarding, shouldShowAuth]);
+  }, [appFullyReady, rootNavigationState?.key, shouldShowOnboarding, shouldShowAuth]);
 
-  // Show plain loading until fonts + app state are ready
+  // Determine which overlay to show (if any).
+  // IMPORTANT: The Stack is ALWAYS rendered below to keep expo-router's
+  // navigation state alive. We overlay blocking UI on top instead of
+  // conditionally returning early, which would unmount the Stack and
+  // corrupt the navigation state when it re-mounts.
+  let overlay: React.ReactNode = null;
+
   if (initLoading) {
-    return <LoadingScreen />;
-  }
-
-  if (initError) {
-    return <AppInitErrorScreen message={initError} onRetry={handleRetryInit} />;
-  }
-
-  if (!initData) {
-    return <AppInitErrorScreen message="Initialization failed unexpectedly. Please retry." onRetry={handleRetryInit} />;
-  }
-
-  if (authError) {
-    return <AppInitErrorScreen message={authError} onRetry={handleRetryAuth} />;
-  }
-
-  // Show animated splash once everything is loaded
-  if (showSplash) {
-    return <AnimatedSplash onFinish={() => setShowSplash(false)} />;
+    overlay = (
+      <View style={[styles.overlay, { backgroundColor: SpotColors.primary }]}>
+        <ActivityIndicator size="large" color={SpotColors.textOnPrimary} />
+      </View>
+    );
+  } else if (initError) {
+    overlay = (
+      <View style={styles.overlay}>
+        <AppInitErrorScreen message={initError} onRetry={handleRetryInit} onSkipToGuest={handleSkipToGuest} />
+      </View>
+    );
+  } else if (!initData) {
+    overlay = (
+      <View style={styles.overlay}>
+        <AppInitErrorScreen message="Initialization failed unexpectedly. Please retry." onRetry={handleRetryInit} onSkipToGuest={handleSkipToGuest} />
+      </View>
+    );
+  } else if (authError) {
+    overlay = (
+      <View style={styles.overlay}>
+        <AppInitErrorScreen message={authError} onRetry={handleRetryAuth} onSkipToGuest={handleSkipToGuest} />
+      </View>
+    );
+  } else if (showSplash) {
+    overlay = (
+      <View style={styles.overlay}>
+        <AnimatedSplash onFinish={() => setShowSplash(false)} />
+      </View>
+    );
   }
 
   return (
     <ErrorBoundary>
       <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
-        <Stack screenOptions={{ headerShown: false }}>
-          <Stack.Screen name="(tabs)" />
-          <Stack.Screen name="(auth)" />
-          <Stack.Screen name="onboarding" />
-          <Stack.Screen name="information" />
-          <Stack.Screen name="+not-found" />
-        </Stack>
-        <StatusBar style="auto" />
+        <View style={styles.root}>
+          <Stack screenOptions={{ headerShown: false }}>
+            <Stack.Screen name="(tabs)" />
+            <Stack.Screen name="(auth)" />
+            <Stack.Screen name="onboarding" />
+            <Stack.Screen name="information" />
+            <Stack.Screen name="+not-found" />
+          </Stack>
+          <StatusBar style="auto" />
+          {overlay}
+        </View>
       </ThemeProvider>
     </ErrorBoundary>
   );
 }
+
+const styles = StyleSheet.create({
+  root: {
+    flex: 1,
+  },
+  overlay: {
+    ...StyleSheet.absoluteFillObject,
+    zIndex: 100,
+  },
+});

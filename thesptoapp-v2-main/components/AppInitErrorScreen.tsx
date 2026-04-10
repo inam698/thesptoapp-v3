@@ -5,9 +5,10 @@ import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 interface AppInitErrorScreenProps {
   message: string;
   onRetry: () => void;
+  onSkipToGuest?: () => void;
 }
 
-export default function AppInitErrorScreen({ message, onRetry }: AppInitErrorScreenProps) {
+export default function AppInitErrorScreen({ message, onRetry, onSkipToGuest }: AppInitErrorScreenProps) {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Unable to Load App</Text>
@@ -15,6 +16,11 @@ export default function AppInitErrorScreen({ message, onRetry }: AppInitErrorScr
       <TouchableOpacity style={styles.button} onPress={onRetry} activeOpacity={0.85}>
         <Text style={styles.buttonText}>Retry</Text>
       </TouchableOpacity>
+      {onSkipToGuest && (
+        <TouchableOpacity style={styles.skipButton} onPress={onSkipToGuest} activeOpacity={0.85}>
+          <Text style={styles.skipText}>Skip &amp; Continue as Guest</Text>
+        </TouchableOpacity>
+      )}
     </View>
   );
 }
@@ -55,5 +61,16 @@ const styles = StyleSheet.create({
     color: SpotColors.textOnPrimary,
     fontSize: 16,
     fontWeight: '700',
+  },
+  skipButton: {
+    marginTop: 12,
+    paddingHorizontal: 24,
+    paddingVertical: 12,
+  },
+  skipText: {
+    color: SpotColors.textSecondary,
+    fontSize: 14,
+    fontWeight: '600',
+    textDecorationLine: 'underline',
   },
 });

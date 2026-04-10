@@ -180,7 +180,8 @@ export function useAuth(): AuthState {
     if (!auth) {
       console.error('[useAuth] Firebase auth instance is unavailable');
       void appendAuthDiagnostic('useAuth:subscribe:auth-missing');
-      finalize(null, 'Authentication service is unavailable. Please try again.');
+      // Non-blocking: resolve with no user so guest mode can proceed
+      finalize(null, null);
       return () => {
         _injectUserFn = null;
         _hasInjectedUser = false;
@@ -188,14 +189,17 @@ export function useAuth(): AuthState {
     }
 
     // Hard fail-safe: never allow loading to run longer than 5s.
+    // Non-blocking: resolve with null user instead of setting an error
+    // that would prevent the app from launching.
     safetyTimer = setTimeout(() => {
       if (_hasInjectedUser) return;
-      console.warn('[useAuth] Auth state timed out after 5s (fail-safe)');
+      console.warn('[useAuth] Auth state timed out after 5s (fail-safe) — resolving with no user');
       void appendAuthDiagnostic('useAuth:subscribe:timeout', {
         timeoutMs: AUTH_RESOLVE_TIMEOUT_MS,
         retryCount,
       });
-      finalize(null, 'Unable to verify your session. Please retry.');
+      // Resolve with null user and no error — allows guest mode to proceed
+      finalize(null, null);
     }, AUTH_RESOLVE_TIMEOUT_MS);
 
     // Fallback path: do not rely solely on callback delivery.
@@ -242,6 +246,7 @@ export function useAuth(): AuthState {
             // If a different user signed in, update state
             setUserState(firebaseUser);
             setError(null);
+            _hasInjectedUser = false; // SDK now provides the real user
             return;
           }
           void resolveAuthUser(firebaseUser, 'onAuthStateChanged');

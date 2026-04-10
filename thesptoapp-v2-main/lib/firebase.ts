@@ -27,8 +27,28 @@ const firebaseConfig = {
 
 export const FIREBASE_API_KEY = firebaseConfig.apiKey;
 
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
+// Validate config at startup — protects against empty env overrides in production
+if (!firebaseConfig.apiKey || !firebaseConfig.projectId) {
+  const msg = '[Firebase] CRITICAL: Firebase config is missing apiKey or projectId';
+  console.error(msg);
+  if (__DEV__) {
+    throw new Error(msg);
+  }
+}
+
+// Initialize Firebase — wrapped to prevent crash if config is somehow invalid
+let app: ReturnType<typeof initializeApp>;
+try {
+  app = initializeApp(firebaseConfig);
+} catch (e) {
+  console.error('[Firebase] initializeApp failed:', e);
+  // Re-try without optional fields
+  app = initializeApp({
+    apiKey: firebaseConfig.apiKey,
+    projectId: firebaseConfig.projectId,
+    appId: firebaseConfig.appId,
+  });
+}
 
 /**
  * Build the best available persistence layer for React Native.
@@ -165,7 +185,12 @@ export async function waitForAuthReady(timeoutMs = 10000): Promise<boolean> {
 }
 
 export { auth };
-export const db = getFirestore(app);
-export const storage = getStorage(app);
+
+let _db: ReturnType<typeof getFirestore>;
+let _storage: ReturnType<typeof getStorage>;
+try { _db = getFirestore(app); } catch (e) { console.error('[Firebase] Firestore init failed:', e); _db = null as any; }
+try { _storage = getStorage(app); } catch (e) { console.error('[Firebase] Storage init failed:', e); _storage = null as any; }
+export const db = _db;
+export const storage = _storage;
 
 export default app; 
