@@ -1,0 +1,26 @@
+workflows:
+  ios-workflow:
+    name: iOS Build
+    max_build_duration: 60
+    instance_type: mac_mini_m1
+    environment:
+      vars:
+        EXPO_TOKEN: $EXPO_TOKEN
+      node: 20
+      xcode: latest
+    scripts:
+      - name: Install dependencies
+        script: |
+          npm ci
+      - name: Install EAS CLI
+        script: |
+          npm install -g eas-cli
+      - name: Build iOS app
+        script: |
+          eas build --platform ios --local --non-interactive --output build/thespotapp.ipa
+    artifacts:
+      - build/*.ipa
+    publishing:
+      email:
+        recipients:
+          - sistahsistahfoundation101@gmail.com
