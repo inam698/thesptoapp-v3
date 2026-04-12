@@ -221,7 +221,7 @@ export default function InformationCategoryDetailScreen() {
   const renderArticle = ({ item }: { item: any }) => (
     <TouchableOpacity
       style={styles.articleCard}
-      onPress={() => router.push(`/information/article/${item.id}`)}
+      onPress={() => { try { router.push(`/information/article/${item.id}`); } catch (e) { console.warn('[Nav]', e); } }}
       activeOpacity={0.9}
     >
       {/* Background Gradient */}

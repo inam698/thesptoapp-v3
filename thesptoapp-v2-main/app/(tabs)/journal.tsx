@@ -17,6 +17,7 @@ import {
   TouchableOpacity,
   View,
 } from "react-native";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 /** Cross-platform shadow that avoids react-native-web deprecation warnings. */
 function boxShadow(color: string, x: number, y: number, opacity: number, blur: number, elevation: number) {
@@ -33,7 +34,6 @@ function textShadow(color: string, x: number, y: number, blur: number) {
   }
   return { textShadowColor: color, textShadowOffset: { width: x, height: y }, textShadowRadius: blur } as any;
 }
-import { SafeAreaView } from "react-native-safe-area-context";
 
 export default function JournalScreen() {
   const { user } = useAuth();

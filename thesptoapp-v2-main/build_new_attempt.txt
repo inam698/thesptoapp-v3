@@ -1,0 +1,307 @@
+﻿
+ΓÜá∩╕Å Detected that your app uses Expo Go for development, this is not recommended when building production apps.
+Learn more: https://expo.fyi/why-not-build-expo-go-for-production
+To suppress this warning, set EAS_BUILD_NO_EXPO_GO_WARNING=true.
+
+Resolved "production" environment for the build. Learn more: https://docs.expo.dev/eas/environment-variables/#setting-the-environment-for-your-builds
+No environment variables with visibility "Plain text" and "Sensitive" found for the "production" environment on EAS.
+Environment variables loaded from the "production" build profile "env" configuration: EXPO_PUBLIC_ENCRYPTION_COMPLIANCE.
+
+
+
+Γ£ö Using remote iOS credentials (Expo server)
+
+Distribution Certificate is not validated for non-interactive builds.
+Skipping Provisioning Profile validation on Apple Servers because we aren't authenticated.
+
+Project Credentials Configuration
+
+Project                   @emmanuel4534/the-spot-app-v2
+Bundle Identifier         com.chombazm.thespotapp
+                          
+App Store Configuration   
+                          
+Distribution Certificate  
+Serial Number             6130B61FF48B8EBD164762262621C9F9
+Expiration Date           Thu, 25 Mar 2027 23:46:20 GMT+0200
+Apple Team                PD7WX5FAU9 (Kazhinga Holland (Individual))
+Updated                   17 days ago
+                          
+Provisioning Profile      
+Developer Portal ID       82DT9YQWVR
+Status                    active
+Expiration                Thu, 25 Mar 2027 23:46:20 GMT+0200
+Apple Team                PD7WX5FAU9 (Kazhinga Holland (Individual))
+Updated                   17 days ago
+                          
+All credentials are ready to build @emmanuel4534/the-spot-app-v2 (com.chombazm.thespotapp)
+
+
+Compressing project files and uploading to EAS Build. Learn more: https://expo.fyi/eas-build-archive
+node.exe : - Compressing project files\ 
+Compressing project files| Compressing project 
+files/ Compressing project files- Compressing 
+project files\ Compressing project files| 
+Compressing project files/ Compressing project 
+files- Compressing project files\ Compressing 
+project files| Compressing project files/ 
+Compressing project files- Compressing project 
+files\ Compressing project files| Compressing 
+project files/ Compressing project files- 
+Compressing project files\ Compressing project 
+files| Compressing project files/ Compressing 
+project files- Compressing project files\ 
+Compressing project files| Compressing project 
+files/ Compressing project files- Compressing 
+project files\ Compressing project files| 
+Compressing project files/ Compressing project 
+files- Compressing project files\ Compressing 
+project files| Compressing project files/ 
+Compressing project files- Compressing project 
+files\ Compressing project files| Compressing 
+project files/ Compressing project files- 
+Compressing project files\ Compressing project 
+files| Compressing project files/ Compressing 
+project files- Compressing project files\ 
+Compressing project files| Compressing project 
+files/ Compressing project files- Compressing 
+project files\ Compressing project files| 
+Compressing project files/ Compressing project 
+files- Compressing project files\ Compressing 
+project files| Compressing project files/ 
+Compressing project files- Compressing project 
+files\ Compressing project files| Compressing 
+project files/ Compressing project files- 
+Compressing project files\ Compressing project 
+filesΓ£ö Compressed project files 8s (9.1 MB)
+At C:\Users\emman\AppData\Roaming\npm\eas.ps1:24 
+char:5
++     & "node$exe"  
+"$basedir/node_modules/eas-cli/bin/run" $args
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (- Co 
+   mpressing p...les 8s (9.1 MB):String) [], Rem  
+  oteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+- Uploading to EAS Build (0 / 9.1 MB)\ Uploading 
+to EAS Build (64.0 KB / 9.1 MB)| Uploading to EAS 
+Build (64.0 KB / 9.1 MB)/ Uploading to EAS Build 
+(64.0 KB / 9.1 MB)- Uploading to EAS Build (64.0 
+KB / 9.1 MB)\ Uploading to EAS Build (64.0 KB / 
+9.1 MB)| Uploading to EAS Build (64.0 KB / 9.1 
+MB)/ Uploading to EAS Build (64.0 KB / 9.1 MB)- 
+Uploading to EAS Build (64.0 KB / 9.1 MB)\ 
+Uploading to EAS Build (64.0 KB / 9.1 MB)| 
+Uploading to EAS Build (64.0 KB / 9.1 MB)/ 
+Uploading to EAS Build (64.0 KB / 9.1 MB)- 
+Uploading to EAS Build (64.0 KB / 9.1 MB)\ 
+Uploading to EAS Build (64.0 KB / 9.1 MB)| 
+Uploading to EAS Build (64.0 KB / 9.1 MB)/ 
+Uploading to EAS Build (64.0 KB / 9.1 MB)- 
+Uploading to EAS Build (64.0 KB / 9.1 MB)\ 
+Uploading to EAS Build (64.0 KB / 9.1 MB)| 
+Uploading to EAS Build (64.0 KB / 9.1 MB)/ 
+Uploading to EAS Build (64.0 KB / 9.1 MB)- 
+Uploading to EAS Build (64.0 KB / 9.1 MB)\ 
+Uploading to EAS Build (64.0 KB / 9.1 MB)| 
+Uploading to EAS Build (64.0 KB / 9.1 MB)/ 
+Uploading to EAS Build (64.0 KB / 9.1 MB)- 
+Uploading to EAS Build (64.0 KB / 9.1 MB)\ 
+Uploading to EAS Build (64.0 KB / 9.1 MB)| 
+Uploading to EAS Build (192 KB / 9.1 MB)/ 
+Uploading to EAS Build (192 KB / 9.1 MB)- 
+Uploading to EAS Build (192 KB / 9.1 MB)\ 
+Uploading to EAS Build (192 KB / 9.1 MB)| 
+Uploading to EAS Build (192 KB / 9.1 MB)/ 
+Uploading to EAS Build (192 KB / 9.1 MB)- 
+Uploading to EAS Build (192 KB / 9.1 MB)\ 
+Uploading to EAS Build (256 KB / 9.1 MB)| 
+Uploading to EAS Build (256 KB / 9.1 MB)/ 
+Uploading to EAS Build (512 KB / 9.1 MB)- 
+Uploading to EAS Build (512 KB / 9.1 MB)\ 
+Uploading to EAS Build (576 KB / 9.1 MB)| 
+Uploading to EAS Build (896 KB / 9.1 MB)/ 
+Uploading to EAS Build (896 KB / 9.1 MB)- 
+Uploading to EAS Build (1.6 MB / 9.1 MB)\ 
+Uploading to EAS Build (1.6 MB / 9.1 MB)| 
+Uploading to EAS Build (1.8 MB / 9.1 MB)/ 
+Uploading to EAS Build (2.1 MB / 9.1 MB)- 
+Uploading to EAS Build (2.1 MB / 9.1 MB)\ 
+Uploading to EAS Build (2.1 MB / 9.1 MB)| 
+Uploading to EAS Build (2.6 MB / 9.1 MB)/ 
+Uploading to EAS Build (2.6 MB / 9.1 MB)- 
+Uploading to EAS Build (2.6 MB / 9.1 MB)\ 
+Uploading to EAS Build (2.6 MB / 9.1 MB)| 
+Uploading to EAS Build (2.6 MB / 9.1 MB)/ 
+Uploading to EAS Build (3.4 MB / 9.1 MB)- 
+Uploading to EAS Build (3.4 MB / 9.1 MB)\ 
+Uploading to EAS Build (3.4 MB / 9.1 MB)| 
+Uploading to EAS Build (3.8 MB / 9.1 MB)/ 
+Uploading to EAS Build (3.8 MB / 9.1 MB)- 
+Uploading to EAS Build (3.8 MB / 9.1 MB)\ 
+Uploading to EAS Build (3.8 MB / 9.1 MB)| 
+Uploading to EAS Build (3.8 MB / 9.1 MB)/ 
+Uploading to EAS Build (4.3 MB / 9.1 MB)- 
+Uploading to EAS Build (4.3 MB / 9.1 MB)\ 
+Uploading to EAS Build (4.4 MB / 9.1 MB)| 
+Uploading to EAS Build (4.6 MB / 9.1 MB)/ 
+Uploading to EAS Build (4.6 MB / 9.1 MB)- 
+Uploading to EAS Build (4.6 MB / 9.1 MB)\ 
+Uploading to EAS Build (4.6 MB / 9.1 MB)| 
+Uploading to EAS Build (4.6 MB / 9.1 MB)/ 
+Uploading to EAS Build (4.6 MB / 9.1 MB)- 
+Uploading to EAS Build (5.1 MB / 9.1 MB)\ 
+Uploading to EAS Build (5.1 MB / 9.1 MB)| 
+Uploading to EAS Build (5.3 MB / 9.1 MB)/ 
+Uploading to EAS Build (5.3 MB / 9.1 MB)- 
+Uploading to EAS Build (5.3 MB / 9.1 MB)\ 
+Uploading to EAS Build (5.5 MB / 9.1 MB)| 
+Uploading to EAS Build (5.5 MB / 9.1 MB)/ 
+Uploading to EAS Build (5.5 MB / 9.1 MB)- 
+Uploading to EAS Build (5.8 MB / 9.1 MB)\ 
+Uploading to EAS Build (5.8 MB / 9.1 MB)| 
+Uploading to EAS Build (5.8 MB / 9.1 MB)/ 
+Uploading to EAS Build (6.0 MB / 9.1 MB)- 
+Uploading to EAS Build (6.0 MB / 9.1 MB)\ 
+Uploading to EAS Build (6.0 MB / 9.1 MB)| 
+Uploading to EAS Build (6.3 MB / 9.1 MB)/ 
+Uploading to EAS Build (6.3 MB / 9.1 MB)- 
+Uploading to EAS Build (6.3 MB / 9.1 MB)\ 
+Uploading to EAS Build (6.3 MB / 9.1 MB)| 
+Uploading to EAS Build (6.6 MB / 9.1 MB)/ 
+Uploading to EAS Build (6.6 MB / 9.1 MB)- 
+Uploading to EAS Build (6.6 MB / 9.1 MB)\ 
+Uploading to EAS Build (6.8 MB / 9.1 MB)| 
+Uploading to EAS Build (6.8 MB / 9.1 MB)/ 
+Uploading to EAS Build (7.1 MB / 9.1 MB)- 
+Uploading to EAS Build (7.1 MB / 9.1 MB)\ 
+Uploading to EAS Build (7.1 MB / 9.1 MB)| 
+Uploading to EAS Build (7.4 MB / 9.1 MB)/ 
+Uploading to EAS Build (7.4 MB / 9.1 MB)- 
+Uploading to EAS Build (7.4 MB / 9.1 MB)\ 
+Uploading to EAS Build (7.6 MB / 9.1 MB)| 
+Uploading to EAS Build (7.6 MB / 9.1 MB)/ 
+Uploading to EAS Build (7.6 MB / 9.1 MB)- 
+Uploading to EAS Build (7.9 MB / 9.1 MB)\ 
+Uploading to EAS Build (7.9 MB / 9.1 MB)| 
+Uploading to EAS Build (8.2 MB / 9.1 MB)/ 
+Uploading to EAS Build (8.3 MB / 9.1 MB)- 
+Uploading to EAS Build (8.3 MB / 9.1 MB)\ 
+Uploading to EAS Build (8.5 MB / 9.1 MB)| 
+Uploading to EAS Build (8.5 MB / 9.1 MB)/ 
+Uploading to EAS Build (8.8 MB / 9.1 MB)- 
+Uploading to EAS Build (8.8 MB / 9.1 MB)\ 
+Uploading to EAS Build (8.8 MB / 9.1 MB)| 
+Uploading to EAS Build (9.1 MB / 9.1 MB)/ 
+Uploading to EAS Build (9.1 MB / 9.1 MB)- 
+Uploading to EAS Build (9.1 MB / 9.1 MB)\ 
+Uploading to EAS Build (9.1 MB / 9.1 MB)| 
+Uploading to EAS Build (9.1 MB / 9.1 MB)/ 
+Uploading to EAS Build (9.1 MB / 9.1 MB)- 
+Uploading to EAS Build (9.1 MB / 9.1 MB)\ 
+Uploading to EAS Build (9.1 MB / 9.1 MB)| 
+Uploading to EAS Build (9.1 MB / 9.1 MB)/ 
+Uploading to EAS Build (9.1 MB / 9.1 MB)- 
+Uploading to EAS Build (9.1 MB / 9.1 MB)\ 
+Uploading to EAS Build (9.1 MB / 9.1 MB)| 
+Uploading to EAS Build (9.1 MB / 9.1 MB)/ 
+Uploading to EAS Build (9.1 MB / 9.1 MB)Γ£ö 
+Uploaded to EAS 17s
+Γî¢∩╕Å Computing the project fingerprint is taking longer than expected...
+ΓÅ⌐ To skip this step, set the environment variable: EAS_SKIP_AUTO_FINGERPRINT=1
+- Computing project fingerprint\ Computing 
+project fingerprint| Computing project 
+fingerprint/ Computing project fingerprint- 
+Computing project fingerprint\ Computing project 
+fingerprint| Computing project fingerprint/ 
+Computing project fingerprint- Computing project 
+fingerprint\ Computing project fingerprint| 
+Computing project fingerprint/ Computing project 
+fingerprint- Computing project fingerprint\ 
+Computing project fingerprint| Computing project 
+fingerprint/ Computing project fingerprint- 
+Computing project fingerprint\ Computing project 
+fingerprint| Computing project fingerprint/ 
+Computing project fingerprint- Computing project 
+fingerprint\ Computing project fingerprint| 
+Computing project fingerprint/ Computing project 
+fingerprint- Computing project fingerprint\ 
+Computing project fingerprint| Computing project 
+fingerprint/ Computing project fingerprint- 
+Computing project fingerprint\ Computing project 
+fingerprint| Computing project fingerprint/ 
+Computing project fingerprint- Computing project 
+fingerprint- Computing project fingerprint- 
+Computing project fingerprint\ Computing project 
+fingerprint| Computing project fingerprint/ 
+Computing project fingerprint- Computing project 
+fingerprint\ Computing project fingerprint| 
+Computing project fingerprint/ Computing project 
+fingerprint- Computing project fingerprint\ 
+Computing project fingerprint| Computing project 
+fingerprint/ Computing project fingerprint- 
+Computing project fingerprint\ Computing project 
+fingerprint| Computing project fingerprint/ 
+Computing project fingerprint- Computing project 
+fingerprint\ Computing project fingerprint| 
+Computing project fingerprint/ Computing project 
+fingerprint- Computing project fingerprint\ 
+Computing project fingerprint| Computing project 
+fingerprint/ Computing project fingerprint- 
+Computing project fingerprint\ Computing project 
+fingerprint| Computing project fingerprint/ 
+Computing project fingerprint- Computing project 
+fingerprint\ Computing project fingerprint| 
+Computing project fingerprint/ Computing project 
+fingerprint- Computing project fingerprint\ 
+Computing project fingerprint| Computing project 
+fingerprint/ Computing project fingerprint- 
+Computing project fingerprint\ Computing project 
+fingerprint| Computing project fingerprint/ 
+Computing project fingerprint- Computing project 
+fingerprint\ Computing project fingerprint| 
+Computing project fingerprint/ Computing project 
+fingerprint- Computing project fingerprint\ 
+Computing project fingerprint| Computing project 
+fingerprint/ Computing project fingerprint- 
+Computing project fingerprint\ Computing project 
+fingerprint| Computing project fingerprint/ 
+Computing project fingerprint- Computing project 
+fingerprint\ Computing project fingerprint| 
+Computing project fingerprint/ Computing project 
+fingerprint- Computing project fingerprint\ 
+Computing project fingerprint| Computing project 
+fingerprint/ Computing project fingerprint- 
+Computing project fingerprint\ Computing project 
+fingerprint| Computing project fingerprint/ 
+Computing project fingerprint- Computing project 
+fingerprint\ Computing project fingerprint| 
+Computing project fingerprint/ Computing project 
+fingerprint- Computing project fingerprint\ 
+Computing project fingerprint| Computing project 
+fingerprint/ Computing project fingerprint- 
+Computing project fingerprint\ Computing project 
+fingerprint| Computing project fingerprint/ 
+Computing project fingerprint- Computing project 
+fingerprint\ Computing project fingerprint| 
+Computing project fingerprint/ Computing project 
+fingerprint- Computing project fingerprint\ 
+Computing project fingerprint| Computing project 
+fingerprint/ Computing project fingerprint- 
+Computing project fingerprint\ Computing project 
+fingerprint| Computing project fingerprint/ 
+Computing project fingerprint- Computing project 
+fingerprint\ Computing project fingerprint| 
+Computing project fingerprint/ Computing project 
+fingerprint- Computing project fingerprint\ 
+Computing project fingerprint| Computing project 
+fingerprint/ Computing project fingerprint- 
+Computing project fingerprint\ Computing project 
+fingerprint| Computing project fingerprint/ 
+Computing project fingerprint- Computing project 
+fingerprint\ Computing project fingerprintΓ£ö 
+Computed project fingerprint
+This account has used its iOS builds from the Free plan this month, which will reset in 18 days (on Fri May 01 2026). Upgrade your plan for more builds with shorter wait times and longer timeouts, and to run more builds concurrently with a subscription plan. https://expo.dev/accounts/emmanuel4534/settings/billing
+    Error: build command failed.

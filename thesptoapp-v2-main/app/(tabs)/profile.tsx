@@ -164,12 +164,20 @@ export default function ProfileScreen() {
     Alert.alert("Help & FAQ", "Frequently Asked Questions and help topics will be available soon. For urgent help, please contact support.");
   };
 
-  const handleContactSupport = () => {
-    Linking.openURL("mailto:support@thespotapp.com?subject=Support%20Request");
+  const handleContactSupport = async () => {
+    try {
+      await Linking.openURL("mailto:support@thespotapp.com?subject=Support%20Request");
+    } catch {
+      Alert.alert("Error", "Could not open email client.");
+    }
   };
 
-  const handlePrivacyPolicy = () => {
-    Linking.openURL("https://thesptoapp-v2.vercel.app/privacy");
+  const handlePrivacyPolicy = async () => {
+    try {
+      await Linking.openURL("https://thesptoapp-v2.vercel.app/privacy");
+    } catch {
+      Alert.alert("Error", "Could not open the link.");
+    }
   };
 
   const handleDeleteAccount = () => {
@@ -193,6 +201,7 @@ export default function ProfileScreen() {
   };
 
   const handlePickImage = async () => {
+    try {
     const { status } = await ImagePicker.requestMediaLibraryPermissionsAsync();
     if (status !== "granted") {
       Alert.alert("Permission Required", "Please allow access to your photo library to change your profile picture.");
@@ -247,6 +256,10 @@ export default function ProfileScreen() {
       Alert.alert("Error", "Failed to save photo. Please try again.");
     } finally {
       setIsUploadingPhoto(false);
+    }
+    } catch (err: any) {
+      console.error("[Profile] Image picker error:", err?.message ?? err);
+      Alert.alert("Error", "Could not open photo picker. Please try again.");
     }
   };
 

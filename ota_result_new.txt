@@ -1,0 +1,9 @@
+﻿Run this command inside a project directory.
+node.exe :     Error: update command failed.
+At C:\Users\emman\AppData\Roaming\npm\eas.ps1:24 char:5
++     & "node$exe"  "$basedir/node_modules/eas-cli/bin/run" $args
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (    Error: update command failed. 
+   :String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 

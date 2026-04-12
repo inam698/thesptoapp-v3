@@ -584,7 +584,7 @@ export default function PeriodTrackerScreen() {
                 <TouchableOpacity style={styles.saveButton} onPress={handleSaveCycle} disabled={saving}>
                   {saving ? <ActivityIndicator color={SpotColors.textOnPrimary} /> : <Text style={styles.saveButtonText}>Save</Text>}
                 </TouchableOpacity>
-                <TouchableOpacity style={styles.clearButton} onPress={() => Alert.alert('Clear All Data', 'This will permanently delete all your cycle and symptom data. This cannot be undone.', [{ text: 'Cancel', style: 'cancel' }, { text: 'Clear All', style: 'destructive', onPress: clearAll }])} disabled={saving}>
+                <TouchableOpacity style={styles.clearButton} onPress={() => Alert.alert('Clear All Data', 'This will permanently delete all your cycle and symptom data. This cannot be undone.', [{ text: 'Cancel', style: 'cancel' }, { text: 'Clear All', style: 'destructive', onPress: async () => { try { await clearAll(); } catch (e: any) { Alert.alert('Error', e?.message || 'Could not clear data.'); } } }])} disabled={saving}>
                   <Text style={styles.clearButtonText}>Clear All</Text>
                 </TouchableOpacity>
               </View>

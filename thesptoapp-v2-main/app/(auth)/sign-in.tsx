@@ -56,7 +56,9 @@ export default function SignInScreen() {
         console.warn('[SignIn] Auth readiness timed out, but sign-in will proceed anyway');
         void appendAuthDiagnostic('ui:signIn:auth-ready-timeout', { timeoutMs: 12000 });
       }
-      setAuthSystemReady(ready);
+      // Always mark ready so the "Preparing secure sign in..." text disappears.
+      // Sign-in works regardless because it makes direct HTTP calls.
+      setAuthSystemReady(true);
     }
 
     void bootstrapAuth();
@@ -141,7 +143,18 @@ export default function SignInScreen() {
             ]
           );
         } else {
-          Alert.alert('Sign In Failed', result.error);
+          Alert.alert(
+            'Sign In Failed',
+            result.error,
+            [
+              { text: 'Try Again', style: 'default' },
+              {
+                text: 'Continue as Guest',
+                style: 'default',
+                onPress: () => { void handleContinueAsGuest(); },
+              },
+            ]
+          );
         }
       } else {
         console.log('[SignIn] Login success, uid:', result.user?.uid);

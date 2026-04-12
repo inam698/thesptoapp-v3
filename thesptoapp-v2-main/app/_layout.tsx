@@ -241,24 +241,33 @@ export default function RootLayout() {
     // Without this guard, router.replace() can throw
     // "Attempted to navigate before mounting the Root Layout component"
     // which crashes the app (especially on iPad / iPadOS 26).
-    if (!rootNavigationState?.key) return;
+    if (!rootNavigationState?.key) {
+      // This is a critical guard for iPadOS 26+. The navigator can take multiple
+      // render cycles to mount, and attempting to navigate before its key is
+      // available will cause a native crash.
+      return;
+    }
 
     const inAuthGroup = segments[0] === '(auth)';
     const inOnboarding = segments[0] === 'onboarding';
 
     try {
       if (shouldShowOnboarding && !inOnboarding) {
+        // User hasn't seen onboarding yet, redirect there.
         router.replace('/onboarding');
-      } else if (shouldShowAuth && !inAuthGroup) {
+      } else if (shouldShowAuth && !inAuthGroup && !isGuest) {
+        // User needs to sign in, is not a guest, and is not in the auth flow.
         router.replace('/(auth)/sign-in');
       } else if (!shouldShowOnboarding && !shouldShowAuth && (inAuthGroup || inOnboarding)) {
+        // User is authenticated (or a guest) and has seen onboarding.
+        // If they are on an auth or onboarding screen, send them to the main app.
         router.replace('/(tabs)');
       }
     } catch (e) {
       console.warn('[Layout] Navigation error (will retry on next state change):', e);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [appFullyReady, rootNavigationState?.key, shouldShowOnboarding, shouldShowAuth]);
+  }, [appFullyReady, rootNavigationState?.key, shouldShowOnboarding, shouldShowAuth, isGuest]);
 
   // Determine which overlay to show (if any).
   // IMPORTANT: The Stack is ALWAYS rendered below to keep expo-router's

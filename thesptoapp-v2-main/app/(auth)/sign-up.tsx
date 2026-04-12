@@ -97,7 +97,18 @@ export default function SignUpScreen() {
       
       if (result.error) {
         console.warn('[SignUp] Failed:', result.error);
-        Alert.alert('Sign Up Failed', result.error);
+        Alert.alert(
+          'Sign Up Failed',
+          result.error,
+          [
+            { text: 'Try Again', style: 'default' },
+            {
+              text: 'Continue as Guest',
+              style: 'default',
+              onPress: () => { void handleContinueAsGuest(); },
+            },
+          ]
+        );
       } else {
         console.log('[SignUp] Success, uid:', result.user?.uid);
       }
@@ -111,7 +122,15 @@ export default function SignUpScreen() {
       });
       Alert.alert(
         'Sign Up Failed',
-        'An unexpected error occurred. Please check your connection and try again.'
+        'An unexpected error occurred. Please check your connection and try again.',
+        [
+          { text: 'Try Again', style: 'default' },
+          {
+            text: 'Continue as Guest',
+            style: 'default',
+            onPress: () => { void handleContinueAsGuest(); },
+          },
+        ]
       );
     } finally {
       setIsLoading(false);
@@ -120,7 +139,7 @@ export default function SignUpScreen() {
   };
 
   const handleGoToSignIn = () => {
-    router.push('/(auth)/sign-in');
+    try { router.push('/(auth)/sign-in'); } catch (e) { console.warn('[Nav]', e); }
   };
 
   const handleContinueAsGuest = async () => {
@@ -128,6 +147,7 @@ export default function SignUpScreen() {
       await setGuestMode(true);
     } catch (error: any) {
       console.error('[SignUp] Guest mode error:', error?.message || error);
+      Alert.alert('Error', 'Could not enter guest mode. Please try again.');
     }
   };
 
@@ -172,6 +192,7 @@ export default function SignUpScreen() {
       {/* Form section */}
       <KeyboardAvoidingView
         behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
+        keyboardVerticalOffset={Platform.OS === 'ios' ? (isTablet ? 24 : 0) : 0}
         style={styles.formSection}
       >
         <ScrollView 
@@ -253,6 +274,7 @@ export default function SignUpScreen() {
               title={t('auth.createAccount')}
               onPress={handleSignUp}
               loading={isLoading}
+              disabled={isLoading}
               variant="secondary"
               style={styles.signUpButton}
             />

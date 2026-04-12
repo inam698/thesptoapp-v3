@@ -1,6 +1,5 @@
 import { SpotColors } from '@/constants/Colors';
 import { useOnboarding } from '@/hooks/useOnboarding';
-import { useRouter } from 'expo-router';
 import React, { useRef, useState } from 'react';
 import {
   Pressable,
@@ -33,7 +32,6 @@ export function OnboardingPager({
   const { width } = useWindowDimensions();
   const [currentPage, setCurrentPage] = useState(0);
   const scrollRef = useRef<ScrollView>(null);
-  const router = useRouter();
   const { completeOnboarding } = useOnboarding();
 
   const totalPages = children.length;
@@ -59,10 +57,12 @@ export function OnboardingPager({
   const handleFinish = async () => {
     try {
       await completeOnboarding();
+      // Navigation is handled automatically by the root layout
+      // when onboarding state changes to completed
     } catch {
-      // Even if persistence fails, proceed to auth
+      // Even if persistence fails, try to complete anyway
+      // The root layout will navigate based on state
     }
-    router.replace('/(auth)/sign-in');
   };
 
   const handleScroll = (event: any) => {

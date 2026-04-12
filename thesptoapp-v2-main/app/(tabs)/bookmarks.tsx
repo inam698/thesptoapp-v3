@@ -35,7 +35,8 @@ export default function BookmarksScreen() {
   }, [activeTab, bookmarks.length, history.length, emptyFadeAnim]);
 
   const navigateToArticle = (articleId: string) => {
-    router.push(`/information/article/${articleId}` as any);
+    if (!articleId) return;
+    try { router.push(`/information/article/${articleId}` as any); } catch (e) { console.warn('[Nav]', e); }
   };
 
   const renderBookmarkItem = ({ item }: { item: BookmarkEntry }) => (

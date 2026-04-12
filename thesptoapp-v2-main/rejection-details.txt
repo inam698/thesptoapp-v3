@@ -1,27 +1,28 @@
 === 1. VERSION REJECTION DETAILS ===
 State: REJECTED
-Included types: builds/710b527f-4ca9-4e9f-8f0c-9a62c9cb5ed9
+Included types: builds/e29ac1ca-d9fb-4207-b061-6f68227e7fb6
 
 === 2. ALL REVIEW SUBMISSIONS ===
-  Sub: 969494ba-79d3-4035-93ea-ecdd78cf9a4b | state: READY_FOR_REVIEW | submitted: null
-  Sub: 9be5dd72-bb1a-4f15-aa47-9d957e0367fb | state: UNRESOLVED_ISSUES | submitted: 2026-04-07T01:45:15.137Z
+  Sub: 6184f5e8-0273-433c-8191-9e0209dca0e9 | state: UNRESOLVED_ISSUES | submitted: 2026-04-09T07:55:59.524Z
+  Sub: 0538da90-41ba-4e61-bfb7-71c59b6640bb | state: COMPLETE | submitted: 2026-04-09T06:27:58.21Z
+  Sub: 610016c7-73d4-4f28-9970-eac6c0a0981a | state: COMPLETE | submitted: 2026-04-08T11:07:14.364Z
+  Sub: a29de663-623a-448e-bf5f-9a31c63a5c25 | state: COMPLETE | submitted: 2026-04-08T09:29:03.194Z
+  Sub: 9be5dd72-bb1a-4f15-aa47-9d957e0367fb | state: COMPLETE | submitted: 2026-04-07T01:45:15.137Z
   Sub: de791e4f-f005-467d-8b64-5466f8af48ae | state: COMPLETE | submitted: 2026-04-03T17:58:26.008Z
   Sub: 27137b4d-bc74-4955-9644-e542e17a9d0c | state: COMPLETE | submitted: 2026-04-01T18:04:03.176Z
   Sub: 30607655-eefc-47d7-acf0-d5969cd2a063 | state: COMPLETE | submitted: 2026-04-01T17:29:34.065Z
   Sub: d23699b1-51dc-4803-a265-0f849350dea8 | state: COMPLETE | submitted: 2026-03-31T11:07:29.323Z
   Sub: 78b301b8-0006-4b3c-915d-29ad7f01b216 | state: COMPLETE | submitted: 2026-03-31T08:57:00.285Z
-  Sub: 09fa561b-2597-49d4-99db-8f59316b3a36 | state: COMPLETE | submitted: 2026-03-29T18:17:06.712Z
-  Sub: 30252f0c-35fe-4be0-b2e0-0ecf534e0d90 | state: COMPLETE | submitted: 2026-03-29T17:29:14.977Z
-  Sub: 661dfef9-1cca-4db5-8b03-5ea22c7fd3e0 | state: COMPLETE | submitted: 2026-03-29T16:53:27.227Z
-  Included: type=reviewSubmissionItems id=OWJlNWRkNzItYmIxYS00ZjE1LWFhNDctOWQ5NTdlMDM2N2ZifDZ8ODgzMzU4MzY0 state=REJECTED
+  Included: type=reviewSubmissionItems id=NjE4NGY1ZTgtMDI3My00MzNjLTgxOTEtOWUwMjA5ZGNhMGU5fDZ8ODgzMzU4MzY0 state=REJECTED
+  Included: type=reviewSubmissionItems id=MDUzOGRhOTAtNDFiYS00ZTYxLWJmYjctNzFjNTliNjY0MGJifDZ8ODgzMzU4MzY0 state=REMOVED
+  Included: type=reviewSubmissionItems id=NjEwMDE2YzctNzNkNC00ZjI4LTk5NzAtZWFjNmMwYTA5ODFhfDZ8ODgzMzU4MzY0 state=REMOVED
+  Included: type=reviewSubmissionItems id=YTI5ZGU2NjMtNjIzYS00NDhlLWJmNWYtOWEzMWM2M2E1YzI1fDZ8ODgzMzU4MzY0 state=REMOVED
+  Included: type=reviewSubmissionItems id=OWJlNWRkNzItYmIxYS00ZjE1LWFhNDctOWQ5NTdlMDM2N2ZifDZ8ODgzMzU4MzY0 state=REMOVED
   Included: type=reviewSubmissionItems id=ZGU3OTFlNGYtZjAwNS00NjdkLThiNjQtNTQ2NmY4YWY0OGFlfDZ8ODgzMzU4MzY0 state=REMOVED
   Included: type=reviewSubmissionItems id=MjcxMzdiNGQtYmM3NC00OTU1LTk2NDQtZTU0MmUxN2E5ZDBjfDZ8ODgzMzU4MzY0 state=REMOVED
   Included: type=reviewSubmissionItems id=MzA2MDc2NTUtZWVmYy00N2Q3LWFjZjAtZDU5NjljZDJhMDYzfDZ8ODgzMzU4MzY0 state=REMOVED
   Included: type=reviewSubmissionItems id=ZDIzNjk5YjEtNTFkYy00ODAzLWEyNjUtMGY4NDkzNTBkZWE4fDZ8ODgzMzU4MzY0 state=REMOVED
   Included: type=reviewSubmissionItems id=NzhiMzAxYjgtMDAwNi00YjNjLTkxNWQtMjlhZDdmMDFiMjE2fDZ8ODgzMzU4MzY0 state=REMOVED
-  Included: type=reviewSubmissionItems id=MDlmYTU2MWItMjU5Ny00OWQ0LTk5ZGItOGY1OTMxNmIzYTM2fDZ8ODgzMzU4MzY0 state=REMOVED
-  Included: type=reviewSubmissionItems id=MzAyNTJmMGMtMzVmZS00YmUwLWIyZTAtMGVjZjUzNGUwZDkwfDZ8ODgzMzU4MzY0 state=REMOVED
-  Included: type=reviewSubmissionItems id=NjYxZGZlZjktMWNjYS00ZGI1LThiMDMtNWVhMjJjN2ZkM2UwfDZ8ODgzMzU4MzY0 state=REMOVED
 
 === 3. REJECTION SUBMISSION DETAILS (2d551f76) ===
 State: undefined
@@ -39,8 +40,14 @@ Notes: Sign in with the demo credentials provided above.
 
 The Spot App is a sexual and reproductive health education platform for young women and girls in Africa, built by the Sistah Sistah Foundation.
 
+WHAT WE FIXED (Build 52):
+- Firebase Auth Readiness Gate: Sign-in disabled until auth system fully initialized, preventing first-launch failures
+- Input Normalization: Strips invisible characters, disables autocorrect/autocapitalize on iPad
+- Transient Error Retry: Auto-retry on network hiccups
+- Guest Fallback: "Try Again" + "Continue as Guest" on network issues
+
 To test the app:
-1. Enter the demo email and password on the Sign In screen, then tap Sign In.
+1. Enter the demo email and password on the Sign In screen, then tap Sign In. Login succeeds on first attempt.
 2. Home tab: Browse 9 health categories and read articles.
 3. Period Tracker tab: Log a menstrual cycle.
 4. Journal tab: Write a private journal entry.
@@ -48,7 +55,6 @@ To test the app:
 6. Profile tab: View account settings and preferences.
 
 Guest mode (no account required) is also available via the "Continue as Guest" button on the sign-in screen.
-
 An active internet connection is required for content loading.
 
 === 6. VERSION SUBMISSION OBJECT ===
@@ -56,7 +62,7 @@ Status: 403
 Data: {
   "errors": [
     {
-      "id": "19f1b0da-01e4-4e41-bd1e-3e5d8904a73f",
+      "id": "8fcdd3f5-d05c-427d-9e5b-8532608d1a38",
       "status": "403",
       "code": "FORBIDDEN_ERROR",
       "title": "The given operation is not allowed",

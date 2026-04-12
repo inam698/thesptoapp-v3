@@ -152,12 +152,14 @@ export default function InformationListScreen() {
                 <TouchableOpacity
                   key={cat.id}
                   style={styles.infoCard}
-                  onPress={() =>
-                    router.push({
-                      pathname: "/information/[id]",
-                      params: { id: cat.id },
-                    })
-                  }
+                  onPress={() => {
+                    try {
+                      router.push({
+                        pathname: "/information/[id]",
+                        params: { id: cat.id },
+                      });
+                    } catch (e) { console.warn('[Nav]', e); }
+                  }}
                   activeOpacity={0.85}
                 >
                   <LinearGradient

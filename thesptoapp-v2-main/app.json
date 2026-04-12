@@ -14,14 +14,14 @@
     },
     "updates": {
       "enabled": true,
-      "checkAutomatically": "ON_ERROR_RECOVERY",
-      "fallbackToCacheTimeout": 0,
+      "checkAutomatically": "ON_LOAD",
+      "fallbackToCacheTimeout": 5000,
       "url": "https://u.expo.dev/7afa0315-0ed5-40d7-aa1d-90c8ea3bfc94"
     },
     "ios": {
       "supportsTablet": true,
       "bundleIdentifier": "com.chombazm.thespotapp",
-      "buildNumber": "17",
+      "buildNumber": "75",
       "infoPlist": {
         "ITSAppUsesNonExemptEncryption": false,
         "NSPhotoLibraryUsageDescription": "The Spot App needs access to your photo library to set your profile picture.",

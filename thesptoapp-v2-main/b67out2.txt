@@ -1,0 +1,12 @@
+﻿node :     Error: build:view command failed.
+At line:1 char:1
++ node "c:\Users\emman\OneDrive\Documents\thesptoapp-v2-main\thesptoapp ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (    Error: build:view command fai 
+   led.:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+STDOUT tail: Run this command inside a project directory.
+
+STDERR tail:     Error: build:view command failed.
+

@@ -1,0 +1,109 @@
+- Exporting...
+[expo-cli] Starting Metro Bundler
+[expo-cli] iOS node_modules\expo-router\entry.js   0.0% (0/1)
+[expo-cli] Android node_modules\expo-router\entry.js   0.0% (0/1)
+[expo-cli] iOS node_modules\expo-router\entry.js  13.0% (18/50)
+[expo-cli] Android node_modules\expo-router\entry.js  12.2% ( 33/158)
+[expo-cli] iOS node_modules\expo-router\entry.js  13.0% (119/337)
+[expo-cli] Android node_modules\expo-router\entry.js  17.1% (137/343)
+[expo-cli] iOS node_modules\expo-router\entry.js  14.4% (138/367)
+[expo-cli] Android node_modules\expo-router\entry.js  29.1% (322/597)
+[expo-cli] iOS node_modules\expo-router\entry.js  27.1% (322/619)
+[expo-cli] Android node_modules\expo-router\entry.js  49.1% ( 521/1020)
+[expo-cli] iOS node_modules\expo-router\entry.js  37.6% ( 485/1047)
+[expo-cli] Android node_modules\expo-router\entry.js  49.1% ( 634/1142)
+[expo-cli] iOS node_modules\expo-router\entry.js  37.6% ( 601/1136)
+[expo-cli] Android node_modules\expo-router\entry.js  59.0% (1087/1437)
+[expo-cli] iOS node_modules\expo-router\entry.js  58.4% (1112/1494)
+[expo-cli] Android node_modules\expo-router\entry.js  59.0% (1141/1494)
+[expo-cli] iOS node_modules\expo-router\entry.js  72.1% (1356/1597)
+[expo-cli] Android node_modules\expo-router\entry.js  75.1% (1473/1700)
+[expo-cli] iOS node_modules\expo-router\entry.js  79.5% (1561/1763)
+[expo-cli] Android node_modules\expo-router\entry.js  85.2% (1695/1836)
+[expo-cli] iOS node_modules\expo-router\entry.js  89.8% (1828/1929)
+[expo-cli] Android node_modules\expo-router\entry.js  90.2% (1898/2001)
+[expo-cli] iOS node_modules\expo-router\entry.js  99.9% (2118/2118)
+[expo-cli] Android node_modules\expo-router\entry.js  99.9% (2128/2128)
+[expo-cli] Android Bundled 103129ms node_modules\expo-router\entry.js (2128 modules)
+[expo-cli] iOS node_modules\expo-router\entry.js  99.9% (2118/2118)
+[expo-cli] Android node_modules\expo-router\entry.js  99.9% (2128/2128)
+[expo-cli] iOS node_modules\expo-router\entry.js  99.9% (2118/2118)
+[expo-cli] iOS Bundled 145472ms node_modules\expo-router\entry.js (2118 modules)
+[expo-cli] iOS node_modules\expo-router\entry.js  99.9% (2118/2118)
+[expo-cli] Creating asset map
+[expo-cli] 
+[expo-cli]  Assets (76):
+[expo-cli] assets\fonts\SpaceMono-Regular.ttf (93.3 kB)
+[expo-cli] assets\images\avatar.png (11.3 kB)
+[expo-cli] assets\images\icon.png (607 kB)
+[expo-cli] assets\images\onboarding\onboarding-1.png (95.4 kB)
+[expo-cli] assets\images\onboarding\onboarding-2.png (92.9 kB)
+[expo-cli] assets\images\onboarding\onboarding-3.png (180 kB)
+[expo-cli] node_modules\@expo\vector-icons\build\vendor\react-native-vector-icons\Fonts\AntDesign.ttf (70.3 kB)
+[expo-cli] node_modules\@expo\vector-icons\build\vendor\react-native-vector-icons\Fonts\Entypo.ttf (66.2 kB)
+[expo-cli] node_modules\@expo\vector-icons\build\vendor\react-native-vector-icons\Fonts\EvilIcons.ttf (13.5 kB)
+[expo-cli] node_modules\@expo\vector-icons\build\vendor\react-native-vector-icons\Fonts\Feather.ttf (56.2 kB)
+[expo-cli] node_modules\@expo\vector-icons\build\vendor\react-native-vector-icons\Fonts\FontAwesome.ttf (166 kB)
+[expo-cli] node_modules\@expo\vector-icons\build\vendor\react-native-vector-icons\Fonts\FontAwesome5_Brands.ttf (134 kB)
+[expo-cli] node_modules\@expo\vector-icons\build\vendor\react-native-vector-icons\Fonts\FontAwesome5_Regular.ttf (33.7 kB)
+[expo-cli] node_modules\@expo\vector-icons\build\vendor\react-native-vector-icons\Fonts\FontAwesome5_Solid.ttf (203 kB)
+[expo-cli] node_modules\@expo\vector-icons\build\vendor\react-native-vector-icons\Fonts\FontAwesome6_Brands.ttf (209 kB)
+[expo-cli] node_modules\@expo\vector-icons\build\vendor\react-native-vector-icons\Fonts\FontAwesome6_Regular.ttf (68 kB)
+[expo-cli] node_modules\@expo\vector-icons\build\vendor\react-native-vector-icons\Fonts\FontAwesome6_Solid.ttf (424 kB)
+[expo-cli] node_modules\@expo\vector-icons\build\vendor\react-native-vector-icons\Fonts\Fontisto.ttf (314 kB)
+[expo-cli] node_modules\@expo\vector-icons\build\vendor\react-native-vector-icons\Fonts\Foundation.ttf (57 kB)
+[expo-cli] node_modules\@expo\vector-icons\build\vendor\react-native-vector-icons\Fonts\Ionicons.ttf (443 kB)
+[expo-cli] node_modules\@expo\vector-icons\build\vendor\react-native-vector-icons\Fonts\MaterialCommunityIcons.ttf (1.15 MB)
+[expo-cli] node_modules\@expo\vector-icons\build\vendor\react-native-vector-icons\Fonts\MaterialIcons.ttf (357 kB)
+[expo-cli] node_modules\@expo\vector-icons\build\vendor\react-native-vector-icons\Fonts\Octicons.ttf (49.4 kB)
+[expo-cli] node_modules\@expo\vector-icons\build\vendor\react-native-vector-icons\Fonts\SimpleLineIcons.ttf (54.1 kB)
+[expo-cli] node_modules\@expo\vector-icons\build\vendor\react-native-vector-icons\Fonts\Zocial.ttf (25.8 kB)
+[expo-cli] node_modules\@react-navigation\elements\lib\module\assets\back-icon-mask.png (653 B)
+[expo-cli] node_modules\@react-navigation\elements\lib\module\assets\back-icon.png (8 variations | 359 B)
+[expo-cli] node_modules\@react-navigation\elements\lib\module\assets\clear-icon.png (4 variations | 425 B)
+[expo-cli] node_modules\@react-navigation\elements\lib\module\assets\close-icon.png (4 variations | 235 B)
+[expo-cli] node_modules\@react-navigation\elements\lib\module\assets\search-icon.png (7 variations | 592 B)
+[expo-cli] node_modules\expo-router\assets\arrow_down.png (9.46 kB)
+[expo-cli] node_modules\expo-router\assets\error.png (469 B)
+[expo-cli] node_modules\expo-router\assets\file.png (138 B)
+[expo-cli] node_modules\expo-router\assets\forward.png (188 B)
+[expo-cli] node_modules\expo-router\assets\pkg.png (364 B)
+[expo-cli] node_modules\expo-router\assets\sitemap.png (465 B)
+[expo-cli] node_modules\expo-router\assets\unmatched.png (4.75 kB)
+[expo-cli] node_modules\react-native-calendars\src\calendar\img\next.png (5 variations | 325 B)
+[expo-cli] node_modules\react-native-calendars\src\calendar\img\previous.png (5 variations | 327 B)
+[expo-cli] node_modules\react-native-calendars\src\img\down.png (5 variations | 401 B)
+[expo-cli] node_modules\react-native-calendars\src\img\up.png (5 variations | 409 B)
+[expo-cli] 
+[expo-cli]  android bundles (2):
+[expo-cli] _expo/static/js/android/entry-8fb6acb1a5431e8859b64b2d42623598.hbc (4.24 MB)
+[expo-cli] _expo/static/js/android/entry-8fb6acb1a5431e8859b64b2d42623598.hbc.map (13.9 MB)
+[expo-cli] 
+[expo-cli]  ios bundles (2):
+[expo-cli] _expo/static/js/ios/entry-c4c99a58da521bfe56501d8f5ba7e353.hbc (4.23 MB)
+[expo-cli] _expo/static/js/ios/entry-c4c99a58da521bfe56501d8f5ba7e353.hbc.map (13.9 MB)
+[expo-cli] 
+[expo-cli]  Files (2):
+[expo-cli] assetmap.json (35 kB)
+[expo-cli] metadata.json (8.82 kB)
+[expo-cli] 
+[expo-cli] Exported: dist
+ Exported bundle(s)
+- Uploading...
+- Uploading assetmap.json (0 / 34.2 KB)
+ Uploaded assetmap.json 4s
+ Uploaded 2 app bundles
+ Uploading assets skipped - no new assets found
+i 65 iOS assets, 71 Android assets (maximum: 2000 total per update). Learn more about asset limits: https://expo.fyi/eas-update-asset-limits
+Skipping project fingerprints
+- Publishing...
+ Published!
+Branch             production
+Runtime version    2.1.0
+Platform           android, ios
+Update group ID    ff1d0942-1c11-4804-ad31-92a53927a6d5
+Android update ID  019d7b07-6f11-7fbb-bc06-5bf751f821c3
+iOS update ID      019d7b07-6f11-7a77-955a-4e0823964b05
+Message            Fix crash on launch - startup non-fatal
+Commit             b7b0b7c2f26f66490891713960689af5e2c5a04e*
+EAS Dashboard      https://expo.dev/accounts/emmanuel4534/projects/the-spot-app-v2/updates/ff1d0942-1c11-4804-ad31-92a53927a6d5

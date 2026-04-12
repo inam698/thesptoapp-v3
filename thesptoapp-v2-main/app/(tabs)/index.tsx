@@ -118,6 +118,10 @@ export default function HomeScreen() {
 
   const [searchQuery, setSearchQuery] = React.useState("");
 
+  const safeNavigate = (route: any) => {
+    try { router.push(route); } catch (e) { console.warn('[Nav]', e); }
+  };
+
   const quickActions = [
     {
       id: "period-tracker",
@@ -127,23 +131,7 @@ export default function HomeScreen() {
       color: SpotColors.rose,
       iconBg: SpotColors.softPink,
       gradient: [SpotColors.softPink, SpotColors.blush],
-      onPress: () => {
-        if (!user) {
-          Alert.alert(
-            t('home.signInRequired'),
-            t('home.signInToAccess'),
-            [
-              { text: t('common.cancel'), style: "cancel" },
-              {
-                text: t('auth.signIn'),
-                onPress: () => router.push("/(auth)/sign-in"),
-              },
-            ]
-          );
-          return;
-        }
-        router.push("/(tabs)/period-tracker");
-      },
+      onPress: () => safeNavigate("/(tabs)/period-tracker"),
     },
     {
       id: "journal",
@@ -153,7 +141,7 @@ export default function HomeScreen() {
       color: SpotColors.primary,
       iconBg: SpotColors.gradientLight,
       gradient: [SpotColors.gradientLight, SpotColors.gradientMid],
-      onPress: () => router.push("/(tabs)/journal"),
+      onPress: () => safeNavigate("/(tabs)/journal"),
     },
     {
       id: "information",
@@ -163,7 +151,7 @@ export default function HomeScreen() {
       color: SpotColors.lavender,
       iconBg: SpotColors.gradientCard,
       gradient: [SpotColors.gradientCard, SpotColors.gradientLight],
-      onPress: () => router.push("/information"),
+      onPress: () => safeNavigate("/information"),
     },
     {
       id: "profile",
@@ -173,22 +161,22 @@ export default function HomeScreen() {
       color: SpotColors.secondary,
       iconBg: SpotColors.gradientLight,
       gradient: [SpotColors.gradientLight, SpotColors.primaryLight],
-      onPress: () => router.push("/(tabs)/profile"),
+      onPress: () => safeNavigate("/(tabs)/profile"),
     },
   ];
 
   const handleSearch = () => {
     if (searchQuery.trim()) {
-      router.push(`/information?search=${encodeURIComponent(searchQuery)}`);
+      safeNavigate(`/information?search=${encodeURIComponent(searchQuery)}`);
     }
   };
 
   const handleViewAllInformation = () => {
-    router.push("/information");
+    safeNavigate("/information");
   };
 
   const handleInformationPress = (categoryId: string) => {
-    router.push(`/information/${categoryId}`);
+    safeNavigate(`/information/${categoryId}`);
   };
 
   return (
@@ -225,17 +213,15 @@ export default function HomeScreen() {
             <View style={styles.userInfo}>
               <Text style={styles.greeting}>{t('home.greeting')}</Text>
               <Text style={styles.userName}>
-                {user?.displayName?.split(" ")[0] ||
-                  user?.email?.split("@")[0] ||
-                  t('home.greetingGuest')}
+                {user ? (user.displayName?.split(" ")[0] || user.email?.split("@")[0]) : t('home.greetingGuest')}
               </Text>
             </View>
-            <TouchableOpacity style={styles.avatarContainer} onPress={() => router.push("/(tabs)/profile")}>
+            <TouchableOpacity style={styles.avatarContainer} onPress={() => safeNavigate("/(tabs)/profile")}>
               <LinearGradient
                 colors={[SpotColors.blush, SpotColors.rose] as any}
                 style={styles.avatarGradient}
               >
-                {user?.photoURL ? (
+                {user && user.photoURL ? (
                   <Image
                     source={{ uri: user.photoURL }}
                     style={styles.avatar}
@@ -306,7 +292,7 @@ export default function HomeScreen() {
               <Text style={styles.sectionSubtitle}>Health Topics</Text>
             </View>
             <TouchableOpacity
-              onPress={() => router.push("/information")}
+              onPress={() => safeNavigate("/information")}
               style={styles.viewAllButton}
             >
               <Text style={styles.viewAllText}>{t('home.viewAll')}</Text>
@@ -324,7 +310,7 @@ export default function HomeScreen() {
                 key={cat.id}
                 style={styles.featuredCard}
                 onPress={() =>
-                  router.push({
+                  safeNavigate({
                     pathname: "/information/[id]",
                     params: { id: cat.id },
                   })
